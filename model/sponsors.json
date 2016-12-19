@@ -62,5 +62,13 @@
     "sponsorLogo": "twilio-logo_400x400.png",
     "sponsorTitle": "Twilio",
     "sponsorPackage": "Travel"
+  },
+  {
+    "sponsorId": 9,
+    "sponsorName": "Huge",
+    "sponsorUrl": "https://www.hugeinc.com/",
+    "sponsorLogo": "huge-logo_400x400.png",
+    "sponsorTitle": "Huge",
+    "sponsorPackage": "Travel"
   }
 ]
