@@ -2,26 +2,14 @@
 
 # compiled output
 /dist
-/tmp
-/public
 
 # dependencies
 /node_modules
-/bower_components
 
 # IDEs and editors
 /.idea
-/.vscode
-.project
-.classpath
-*.launch
-.settings/
 
 # misc
-/.sass-cache
-/connect.lock
-/coverage/*
-/libpeerconnection.log
 npm-debug.log
 testem.log
 /typings
@@ -29,17 +17,9 @@ testem.log
 /app/*.js.map
 /app/**/*.js
 /app/**/*.js.map
-/*.js
+#/*.js
 /*.js.map
-
-# e2e
-/e2e/*.js
-/e2e/*.map
 
 #System Files
 .DS_Store
 Thumbs.db
-
-# include
-!webpack.config.js
-!webpack.common.js

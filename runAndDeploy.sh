@@ -1,4 +1,3 @@
 npm run build
-
-cp CNAME public
+cp CNAME dist
 npm run deploy
