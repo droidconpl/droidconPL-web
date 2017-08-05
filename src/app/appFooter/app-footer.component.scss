@@ -1,7 +1,6 @@
 @import "../shared/variables";
 
 //TODO: add mixin for hover translation for all the links
-//TODO: add styles for wider screens
 
 :host {
     background-color: $bg-dark;
@@ -12,15 +11,9 @@
     padding: 10px 0;
 
     footer {
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
-        align-items: center;
         text-align: center;
-
         section {
             margin-bottom: 10px;
-            font-size: $font-xs;
             &:last-child {
                 margin-bottom: 0;
             }
@@ -62,7 +55,6 @@
                     margin-right: 10px;
                 }
                 p {
-                    font-family: $neris-light;
                     display: inline-block;
                     margin: 0;
                     text-align: left;
@@ -72,18 +64,21 @@
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 576px) {
     :host {
         padding: 20px 0;
+    }
+}
+
+@media (min-width: 992px) {
+    :host {
         footer {
-            flex-flow: row;
             text-align: left;
             height: 50px;
             section {
                 margin-bottom: 0;
-                margin-right: 50px;
                 font-size: $font-md;
-                height: 100%;
+                height: inherit;
                 &.social-media,
                 &.droidcon-global {
                     display: flex;
@@ -108,6 +103,21 @@
                         text-align: left;
                     }
                 }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    :host {
+        footer section {
+            &.social-media {
+                a + a {
+                    margin-left: 35px;
+                }
+            }
+            &.droidcon-global {
+                justify-content: center;
             }
         }
     }
