@@ -1,0 +1,53 @@
+.krakdroid {
+    animation-name: hop;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+    .left-hand {
+        transform-origin: bottom right;
+        animation-name: wave;
+        animation-duration: 1.4s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-out;
+    }
+
+    .head {
+        transform-origin: bottom right;
+        animation-name: talk;
+        animation-duration: 1.3s;
+        animation-iteration-count: 4;
+        animation-timing-function: ease-out;
+    }
+}
+
+@keyframes wave {
+    10% {
+        transform: rotate(20deg);
+    }
+    20% {
+        transform: rotate(0deg);
+    }
+    30% {
+        transform: rotate(20deg);
+    }
+    40% {
+        transform: rotate(0deg);
+    }
+
+}
+
+@keyframes talk {
+    10% {
+        transform: rotate(10deg);
+    }
+    20% {
+        transform: rotate(0deg);
+    }
+    30% {
+        transform: rotate(10deg);
+    }
+    40% {
+        transform: rotate(0deg);
+    }
+}
