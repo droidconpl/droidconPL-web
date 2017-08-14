@@ -1,161 +1,209 @@
 @import "../shared/variables";
+@import "./krakdroid-animation";
+
+//TODO: extract all significant values to variables
+//TODO: refactoring of the code - make media more readable
 
 :host {
     flex: 1;
+    display: flex;
+    position: relative;
+    min-height: 60vh;
+
+    .layer,
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .layer {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        background-image: url("/src/assets/images/bg_photo.jpg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        opacity : 0.8;
+    }
 
     main {
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: flex-end;
-        height: 100%;
+        align-items: center;
+        position: relative;
+        padding: 20px 0;
 
-        .krakdroid {
-            width: 50%;
-            margin-right: 10%;
-            animation-name: hop;
-            animation-duration: 2s;
-            animation-iteration-count: infinite;
-            animation-timing-function: ease-in-out;
+        section {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            max-width: 240px;
+            color: white;
 
-            .left-hand {
-                transform-origin: bottom right;
-                animation-name: wave;
-                animation-duration: 1.4s;
-                animation-iteration-count: infinite;
-                animation-timing-function: ease-out;
-            }
-
-            .head {
-                transform-origin: bottom right;
-                animation-name: talk;
-                animation-duration: 1.3s;
-                animation-iteration-count: 4;
-                animation-timing-function: ease-out;
-            }
-        }
-
-        @keyframes wave {
-            10% {
-                transform: rotate(20deg);
-            }
-            20% {
-                transform: rotate(0deg);
-            }
-            30% {
-                transform: rotate(20deg);
-            }
-            40% {
-                transform: rotate(0deg);
-            }
-
-        }
-
-        @keyframes talk {
-            10% {
-                transform: rotate(10deg);
-            }
-            20% {
-                transform: rotate(0deg);
-            }
-            30% {
-                transform: rotate(10deg);
-            }
-            40% {
-                transform: rotate(0deg);
-            }
-        }
-
-
-        //talking bubble
-        .bubble {
-            position: relative;
-            right: 40%;
-            top: 25px;
-            width: 200px;
-            padding: 10px;
-            background: #FFFFFF;
-            -webkit-border-radius: 15px;
-            -moz-border-radius: 15px;
-            border-radius: 15px;
-            border: $green solid 5px;
-            &::after
-            {
-                content: '';
-                position: absolute;
-                border-style: solid;
-                border-width: 15px 15px 0;
-                border-color: #FFFFFF transparent;
-                display: block;
-                width: 0;
-                z-index: 1;
-                margin-left: -15px;
-                bottom: -15px;
-                left: 80%;
-            }
-            &::before
-            {
-                content: '';
-                position: absolute;
-                border-style: solid;
-                border-width: 19px 19px 0;
-                border-color: $green transparent;
-                display: block;
-                width: 0;
-                z-index: 0;
-                margin-left: -19px;
-                bottom: -24px;
-                left: 80%;
-            }
-
-            .paragraph {
-                width: 100%;
-                line-height: 1.5;
-                font-weight: 600;
-                p {
-                    text-align: center;
-                    margin: 0 auto;
-                    width: inherit;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    animation-name: type;
-                    animation-duration: 2s;
-                    animation-timing-function: steps(60, end);
+            &.banner {
+                .krakdroid-wrapper {
+                    flex: 2;
+                    display: flex;
+                    justify-content: flex-end;
+                    .krakdroid {
+                        height: 100px;
+                    }
                 }
-                p:nth-child(2){
-                    animation-name: type2;
-                    animation-duration: 6s;
-                    animation-timing-function: steps(60, end);
+                .conference-info {
+                    flex: 3;
+                    display: flex;
+                    flex-flow: column;
+                    .name {
+                        font-family: $neris-black;
+                        color: $green;
+                        font-size: 36px;
+                        line-height: 40px;
+                    }
+                    .date {
+                        font-family: $roboto-condensed;
+                        font-weight: 300;
+                        font-size: 14px;
+                    }
+                }
+            }
+            &.address {
+                font-family: $neris-semi-bold;
+                font-size: 14px;
+                margin-top: 20px;
+                .pin {
+                    flex: 2;
+                    text-align: right;
+                    i {
+                        margin-right: 10px;
+                        font-size: 20px;
+                    }
+                }
+                span {
+                    flex: 3;
                 }
             }
         }
-
-        @keyframes type{
-            from { width: 0; }
-        }
-
-        @keyframes type2{
-            0%{width: 0;}
-            50%{width: 0;}
-            100%{ width: 100%; }
-        }
-
-        @media (min-width: 768px) {
-            .krakdroid {
-                width: 250px;
-                margin-right: 0;
-            }
-            .bubble {
-                right: 15%;
-                width: 250px;
-                padding: 15px;
-            }
-        }
-
     }
-    @media (min-width: 768px) {
-        main {
-            align-items: center;
+}
+
+@media (min-width: 576px) {
+    :host {
+        main section {
+            max-width: 400px;
+            min-width: 400px;
+            &.banner {
+                .krakdroid-wrapper {
+                    .krakdroid {
+                        height: 150px;
+                        margin-right: 10px;
+                    }
+                }
+                .conference-info {
+                    margin-top: 5%;
+                    .name {
+                        font-size: 44px;
+                        line-height: 48px;
+                    }
+                    .date {
+                        font-size: 20px;
+                    }
+                }
+            }
+            &.address {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    :host {
+        main section {
+            min-width: 500px;
+            max-width: 500px;
+            &.banner {
+                .krakdroid-wrapper .krakdroid {
+                    height: 200px;
+                }
+                .conference-info {
+                    .name {
+                        font-size: 60px;
+                        line-height: 64px;
+                    }
+                    .date {
+                        font-size: 26px;
+                    }
+                }
+            }
+            &.address {
+                font-size: 18px;
+                .pin i {
+                    font-size: 26px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    :host {
+        main section {
+            max-width: 600px;
+            min-width: 600px;
+            &.banner {
+                .krakdroid-wrapper .krakdroid {
+                    height: 250px;
+                }
+                .conference-info {
+                    .name {
+                        font-size: 70px;
+                        line-height: 74px;
+                    }
+                    .date {
+                        font-size: 32px;
+                    }
+                }
+            }
+            &.address {
+                font-size: 22px;
+                .pin i {
+                    font-size: 28px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    :host {
+        main section {
+            max-width: 800px;
+            min-width: 800px;
+            &.banner {
+                .krakdroid-wrapper .krakdroid {
+                    margin-right: 20px
+                }
+                .conference-info {
+                    margin-top: 4%;
+                    .name {
+                        font-size: 86px;
+                        line-height: 82px;
+                    }
+                    .date {
+                        font-size: 32px;
+                    }
+                }
+            }
+            &.address {
+                font-size: 24px;
+            }
         }
     }
 }

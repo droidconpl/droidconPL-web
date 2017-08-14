@@ -1,6 +1,20 @@
-//Background colors
-$bg-color: #EEEDEC;
+//Colors
+$light: #EEEDEC;
 $green: #8ACE01;
+$dark: #1F1F1F;
+
+//Background colors
+$bg-light: $light;
+$bg-dark: $dark;
+
 
 //Fonts
 $neris-light: 'nerisLight', sans-serif;
+$neris-black: 'nerisBlack', sans-serif;
+$neris-semi-bold: 'nerisSemiBold', sans-serif;
+$roboto-condensed: 'Roboto Condensed', sans-serif;
+
+
+//Font sizes
+$font-xs: 16px;
+$font-md: 18px;
