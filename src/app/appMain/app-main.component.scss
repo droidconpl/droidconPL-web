@@ -4,12 +4,15 @@
 //TODO: extract all significant values to variables
 //TODO: refactoring of the code - make media more readable
 
+$krakdroid-height: 100px;
+
 :host {
     flex: 1;
     display: flex;
     position: relative;
     min-height: 60vh;
 
+    //bkg photo and blur
     .layer,
     &::before {
         position: absolute;
@@ -42,52 +45,39 @@
 
         section {
             display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
+            flex-direction: column;
             max-width: 240px;
             color: white;
 
             &.banner {
                 .krakdroid-wrapper {
-                    flex: 2;
                     display: flex;
-                    justify-content: flex-end;
+                    margin-bottom: 25px;
                     .krakdroid {
-                        height: 100px;
+                        height: $krakdroid-height;
+                        margin: 0 auto;
                     }
                 }
                 .conference-info {
-                    flex: 3;
                     display: flex;
                     flex-flow: column;
                     .name {
                         font-family: $neris-black;
                         color: $green;
-                        font-size: 36px;
-                        line-height: 40px;
+                        font-size: 47px;
+                        line-height: 43px;
                     }
                     .date {
                         font-family: $roboto-condensed;
                         font-weight: 300;
-                        font-size: 14px;
+                        font-size: 20px;
                     }
                 }
             }
             &.address {
                 font-family: $neris-semi-bold;
                 font-size: 14px;
-                margin-top: 20px;
-                .pin {
-                    flex: 2;
-                    text-align: right;
-                    i {
-                        margin-right: 10px;
-                        font-size: 20px;
-                    }
-                }
-                span {
-                    flex: 3;
-                }
+                margin-top: 25px;
             }
         }
     }
@@ -98,26 +88,30 @@
         main section {
             max-width: 400px;
             min-width: 400px;
+            flex-direction: row;
             &.banner {
                 .krakdroid-wrapper {
+                    width: 125px;
+                    margin-bottom: 0;
                     .krakdroid {
-                        height: 150px;
+                        height: 1.5*$krakdroid-height;
                         margin-right: 10px;
                     }
                 }
                 .conference-info {
                     margin-top: 5%;
                     .name {
-                        font-size: 44px;
-                        line-height: 48px;
+                        font-size: 60px;
+                        line-height: 56px;
                     }
                     .date {
-                        font-size: 20px;
+                        font-size: 24px;
                     }
                 }
             }
             &.address {
-                font-size: 16px;
+                font-size: 18px;
+                padding-left: 125px;
             }
         }
     }
@@ -129,24 +123,25 @@
             min-width: 500px;
             max-width: 500px;
             &.banner {
-                .krakdroid-wrapper .krakdroid {
-                    height: 200px;
+                .krakdroid-wrapper {
+                    width: 160px;
+                    .krakdroid {
+                        height: 2*$krakdroid-height;
+                    }
                 }
                 .conference-info {
                     .name {
-                        font-size: 60px;
-                        line-height: 64px;
+                        font-size: 78px;
+                        line-height: 74px;
                     }
                     .date {
-                        font-size: 26px;
+                        font-size: 32px;
                     }
                 }
             }
             &.address {
-                font-size: 18px;
-                .pin i {
-                    font-size: 26px;
-                }
+                font-size: 20px;
+                padding-left: 160px;
             }
         }
     }
@@ -158,24 +153,25 @@
             max-width: 600px;
             min-width: 600px;
             &.banner {
-                .krakdroid-wrapper .krakdroid {
-                    height: 250px;
+                .krakdroid-wrapper {
+                    width: 200px;
+                    .krakdroid {
+                        height: 2.5*$krakdroid-height;
+                    }
                 }
                 .conference-info {
                     .name {
-                        font-size: 70px;
-                        line-height: 74px;
+                        font-size: 92px;
+                        line-height: 88px;
                     }
                     .date {
-                        font-size: 32px;
+                        font-size: 38px;
                     }
                 }
             }
             &.address {
                 font-size: 22px;
-                .pin i {
-                    font-size: 28px;
-                }
+                padding-left: 200px;
             }
         }
     }
@@ -187,22 +183,26 @@
             max-width: 800px;
             min-width: 800px;
             &.banner {
-                .krakdroid-wrapper .krakdroid {
-                    margin-right: 20px
+                .krakdroid-wrapper {
+                    width: 280px;
+                    .krakdroid {
+                        height: 3.5*$krakdroid-height;
+                        margin-right: 40px;
+                    }
                 }
                 .conference-info {
-                    margin-top: 4%;
                     .name {
-                        font-size: 86px;
-                        line-height: 82px;
+                        font-size: 127px;
+                        line-height: 120px;
                     }
                     .date {
-                        font-size: 32px;
+                        font-size: 52px;
                     }
                 }
             }
             &.address {
-                font-size: 24px;
+                font-size: 26px;
+                padding-left: 280px;
             }
         }
     }

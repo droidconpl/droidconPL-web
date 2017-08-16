@@ -45,6 +45,7 @@
     "resolve-url-loader": "^2.1.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
+    "to-string-loader": "^1.1.5",
     "typescript": "^2.4.2",
     "webpack": "^3.4.1",
     "webpack-dev-server": "^2.6.1",

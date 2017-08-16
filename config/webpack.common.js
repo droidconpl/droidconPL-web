@@ -90,7 +90,5 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name: ['app', 'vendor', 'polyfills']
         }),
-
-        new ExtractTextPlugin('stylesheets/[name].css')
     ]
 };
