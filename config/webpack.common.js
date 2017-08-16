@@ -21,8 +21,8 @@ module.exports = {
                 loaders: [
                     {
                         loader: 'awesome-typescript-loader',
-                        options: { configFileName: helpers.root('tsconfig.json') }
-                    } , 'angular2-template-loader'
+                        options: {configFileName: helpers.root('tsconfig.json')}
+                    }, 'angular2-template-loader'
                 ]
             },
             {
@@ -55,7 +55,9 @@ module.exports = {
                 test: /\.scss$/,
                 include: helpers.root('src', 'app'),
                 use: [
+                    'to-string-loader',
                     'css-loader',
+                    'resolve-url-loader',
                     'sass-loader?sourceMap'
                 ]
             },
@@ -87,6 +89,8 @@ module.exports = {
 
         new webpack.optimize.CommonsChunkPlugin({
             name: ['app', 'vendor', 'polyfills']
-        })
+        }),
+
+        new ExtractTextPlugin('stylesheets/[name].css')
     ]
 };
