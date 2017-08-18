@@ -10,7 +10,8 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['.ts', '.js']
+        extensions: ['.ts', '.js'],
+        modules: ['node_modules']
     },
 
     module: {
@@ -20,8 +21,8 @@ module.exports = {
                 loaders: [
                     {
                         loader: 'awesome-typescript-loader',
-                        options: { configFileName: helpers.root('tsconfig.json') }
-                    } , 'angular2-template-loader'
+                        options: {configFileName: helpers.root('tsconfig.json')}
+                    }, 'angular2-template-loader'
                 ]
             },
             {
@@ -39,25 +40,34 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
+                test: /\.(png|jpe?g|gif|svg|ico)$/,
                 use: [
-                    'file-loader?name=assets/[name].[hash].[ext]'
+                    'file-loader?name=assets/images/[name].[hash].[ext]'
                 ]
             },
             {
-                test: /\.scss$/,
-                exclude: helpers.root('src', 'app'),
+                test: /\.(woff|woff2|ttf|eot)$/,
                 use: [
-                    'style-loader',
-                    'css-loader',
-                    'sass-loader?sourceMap'
+                    'file-loader?name=assets/fonts/[name].[hash].[ext]'
                 ]
             },
             {
                 test: /\.scss$/,
                 include: helpers.root('src', 'app'),
                 use: [
-                    'raw-loader',
+                    'to-string-loader',
+                    'css-loader',
+                    'resolve-url-loader',
+                    'sass-loader?sourceMap'
+                ]
+            },
+            {
+                test: /\.scss$/,
+                include: helpers.root('src', 'assets'),
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'resolve-url-loader',
                     'sass-loader?sourceMap'
                 ]
             }
@@ -79,6 +89,6 @@ module.exports = {
 
         new webpack.optimize.CommonsChunkPlugin({
             name: ['app', 'vendor', 'polyfills']
-        })
+        }),
     ]
 };
