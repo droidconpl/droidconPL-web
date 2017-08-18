@@ -1,0 +1,45 @@
+@import "variables";
+
+.button {
+    color: white;
+    background-color: $green;
+    display: flex;
+    width: 150px;
+    height: 35px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    margin: 0 10px;
+    transition: background-color .2s ease-in;
+    font-family: $neris-semi-bold;
+    font-size: $font-xs;
+    &:hover, &:visited, &:active, &:focus {
+        text-decoration: none;
+    }
+    &:hover {
+        background-color: $green-01;
+    }
+}
+
+@media (min-width: 576px) {
+    .button {
+        height: 40px;
+        width: 160px;
+    }
+}
+
+@media (min-width: 768px) {
+    .button {
+        height: 45px;
+        width: 180px;
+        font-size: $font-md;
+    }
+}
+
+@media (min-width: 992px) {
+    .button {
+        height: 55px;
+        width: 220px;
+        font-size: $font-lg;
+    }
+}

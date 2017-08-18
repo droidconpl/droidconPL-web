@@ -1,8 +1,10 @@
 @import "../shared/variables";
 @import "./krakdroid-animation";
+@import "../shared/components";
 
 //TODO: extract all significant values to variables
 //TODO: refactoring of the code - make media more readable
+//TODO: extract sall components to shared components. Like buttons.
 
 $krakdroid-height: 100px;
 
@@ -77,8 +79,10 @@ $krakdroid-height: 100px;
             &.address {
                 font-family: $neris-semi-bold;
                 font-size: 14px;
-                margin-top: 25px;
             }
+        }
+        section + section {
+            margin-top: 25px;
         }
     }
 }
@@ -113,6 +117,12 @@ $krakdroid-height: 100px;
                 font-size: 18px;
                 padding-left: 125px;
             }
+            &.call-for-papers {
+                justify-content: center;
+            }
+        }
+        main section + section {
+            margin-top: 40px;
         }
     }
 }
