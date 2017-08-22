@@ -36,6 +36,10 @@ $krakdroid-height: 100px;
         opacity : 0.8;
     }
 
+    .shadow-span {
+        text-shadow: 0 0 5px #000000;
+    }
+
     main {
         width: 100%;
         display: flex;
@@ -68,11 +72,13 @@ $krakdroid-height: 100px;
                         color: $green;
                         font-size: 47px;
                         line-height: 43px;
+                        margin: 0 auto;
                     }
                     .date {
                         font-family: $roboto-condensed;
                         font-weight: 300;
                         font-size: 20px;
+                        margin: 0 auto;
                     }
                 }
             }
@@ -90,20 +96,13 @@ $krakdroid-height: 100px;
 @media (min-width: 576px) {
     :host {
         main section {
-            max-width: 400px;
-            min-width: 400px;
-            flex-direction: row;
             &.banner {
                 .krakdroid-wrapper {
-                    width: 125px;
-                    margin-bottom: 0;
                     .krakdroid {
                         height: 1.5*$krakdroid-height;
-                        margin-right: 10px;
                     }
                 }
                 .conference-info {
-                    margin-top: 5%;
                     .name {
                         font-size: 60px;
                         line-height: 56px;
@@ -115,14 +114,10 @@ $krakdroid-height: 100px;
             }
             &.address {
                 font-size: 18px;
-                padding-left: 125px;
             }
             &.call-for-papers {
                 justify-content: center;
             }
-        }
-        main section + section {
-            margin-top: 40px;
         }
     }
 }
@@ -132,14 +127,18 @@ $krakdroid-height: 100px;
         main section {
             min-width: 500px;
             max-width: 500px;
+            flex-direction: row;
             &.banner {
                 .krakdroid-wrapper {
                     width: 160px;
+                    margin-bottom: 0;
                     .krakdroid {
                         height: 2*$krakdroid-height;
+                        margin-right: 10px;
                     }
                 }
                 .conference-info {
+                    margin-top: 5%;
                     .name {
                         font-size: 78px;
                         line-height: 74px;
@@ -153,6 +152,9 @@ $krakdroid-height: 100px;
                 font-size: 20px;
                 padding-left: 160px;
             }
+        }
+        main section + section {
+            margin-top: 40px;
         }
     }
 }
