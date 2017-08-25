@@ -2,6 +2,6 @@
 
 npm run build
 cp CNAME dist
-cp -R src/assets/images/favicon/. dist/assets/meta
+cp -R src/assets/images/metaTags/. dist/assets/meta
 mv dist/assets/meta/favicon.ico dist
 npm run deploy
