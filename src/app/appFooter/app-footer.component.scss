@@ -12,8 +12,10 @@
 
     footer {
         text-align: center;
+
         section {
             margin-bottom: 10px;
+
             &:last-child {
                 margin-bottom: 0;
             }
@@ -74,15 +76,23 @@
     :host {
         footer {
             text-align: left;
-            height: 50px;
+
+            .row {
+                height: 50px;
+                & + .row {
+                    margin-top: 20px;
+                }
+            }
             section {
                 margin-bottom: 0;
                 font-size: $font-md;
                 height: inherit;
+
                 &.social-media,
                 &.droidcon-global {
                     display: flex;
                     align-items: center;
+
                     a {
                         height: 30px;
                     }

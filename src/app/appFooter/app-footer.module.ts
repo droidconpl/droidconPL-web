@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
+import { AppRoutingModule } from '../app-routing.module';
 import { AppFooterComponent } from './app-footer.component';
 
 @NgModule({
+  imports: [
+    AppRoutingModule,
+  ],
   declarations: [
-      AppFooterComponent
+    AppFooterComponent,
   ],
   exports: [
-      AppFooterComponent
+    AppFooterComponent,
   ]
 })
 export class AppFooterModule {
