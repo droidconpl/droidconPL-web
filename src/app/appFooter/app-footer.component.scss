@@ -1,6 +1,5 @@
 @import "../shared/variables";
-
-//TODO: add mixin for hover translation for all the links
+@import "../shared/link";
 
 :host {
     background-color: $bg-dark;
@@ -22,14 +21,6 @@
             h1 {
                 font-size: inherit;
                 margin-bottom: 3px;
-            }
-            a {
-                font-family: $neris-light;
-                text-decoration: none;
-                color: inherit;
-                &:hover {
-                    color: $green;
-                }
             }
             a + a {
                 margin-left: 20px;
