@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 5px;
-    margin: 0 10px;
+    margin: 5px 10px;
     transition: background-color .2s ease-in;
     font-family: $neris-semi-bold;
     font-size: $font-xs;
@@ -33,6 +33,7 @@
         height: 45px;
         width: 180px;
         font-size: $font-md;
+        margin: 0 10px;
     }
 }
 
