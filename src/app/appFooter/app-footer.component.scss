@@ -15,6 +15,10 @@
         section {
             margin-bottom: 10px;
 
+            div+div {
+                margin-top: 10px;
+            }
+
             &:last-child {
                 margin-bottom: 0;
             }
@@ -69,7 +73,7 @@
             text-align: left;
 
             .row {
-                height: 50px;
+                min-height: 100px;
                 & + .row {
                     margin-top: 20px;
                 }
@@ -82,7 +86,8 @@
                 &.social-media,
                 &.droidcon-global {
                     display: flex;
-                    align-items: center;
+                    align-items: flex-start;
+                    justify-content: flex-end;
 
                     a {
                         height: 30px;
