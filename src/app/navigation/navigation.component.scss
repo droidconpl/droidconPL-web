@@ -1,3 +1,9 @@
-:host {
+@import '../shared/variables';
 
+:host nav {
+    background-color: $light;
+
+    &, & a {
+        color: $dark;
+    }
 }
