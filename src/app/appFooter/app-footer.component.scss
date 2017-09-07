@@ -1,6 +1,5 @@
 @import "../shared/variables";
-
-//TODO: add mixin for hover translation for all the links
+@import "../shared/link";
 
 :host {
     background-color: $bg-dark;
@@ -12,22 +11,20 @@
 
     footer {
         text-align: center;
+
         section {
             margin-bottom: 10px;
+
+            div+div {
+                margin-top: 10px;
+            }
+
             &:last-child {
                 margin-bottom: 0;
             }
             h1 {
                 font-size: inherit;
                 margin-bottom: 3px;
-            }
-            a {
-                font-family: $neris-light;
-                text-decoration: none;
-                color: inherit;
-                &:hover {
-                    color: $green;
-                }
             }
             a + a {
                 margin-left: 20px;
@@ -74,15 +71,24 @@
     :host {
         footer {
             text-align: left;
-            height: 50px;
+
+            .row {
+                min-height: 100px;
+                & + .row {
+                    margin-top: 20px;
+                }
+            }
             section {
                 margin-bottom: 0;
                 font-size: $font-md;
                 height: inherit;
+
                 &.social-media,
                 &.droidcon-global {
                     display: flex;
-                    align-items: center;
+                    align-items: flex-start;
+                    justify-content: flex-end;
+
                     a {
                         height: 30px;
                     }
@@ -115,9 +121,6 @@
                 a + a {
                     margin-left: 35px;
                 }
-            }
-            &.droidcon-global {
-                justify-content: center;
             }
         }
     }

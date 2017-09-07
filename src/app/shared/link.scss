@@ -1,0 +1,18 @@
+@import 'variables';
+
+a {
+    font-family: $neris-light;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease-out;
+    &:hover {
+        color: $green;
+    }
+    &.noticeable {
+        text-decoration: underline;
+    }
+    &.green {
+        font-family: $neris-semi-bold;
+        color: $green;
+    }
+}
