@@ -5,9 +5,10 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppMainModule} from './appMain/app-main.module';
 import {AppFooterModule} from './appFooter/app-footer.module';
 import {AboutModule} from './about/about.module';
+import { NavigationModule } from './navigation/navigation.module';
 
-import {AppComponent} from './app.component';
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
+import {AppComponent} from './app.component';
 
 @NgModule({
     imports: [
@@ -16,6 +17,7 @@ import {HashLocationStrategy, LocationStrategy} from "@angular/common";
         AppMainModule,
         AppFooterModule,
         AboutModule,
+        NavigationModule,
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy}
