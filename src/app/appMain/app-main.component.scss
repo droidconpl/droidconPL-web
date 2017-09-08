@@ -9,39 +9,12 @@
 $krakdroid-height: 100px;
 
 :host {
-    flex: 1;
     display: flex;
-    position: relative;
-    min-height: 60vh;
-
-    //bkg photo and blur
-    .layer,
-    &::before {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-    .layer {
-        background-color: rgba(0, 0, 0, 0.6);
-    }
-    &::before {
-        content: '';
-        position: absolute;
-        background-image: url('../../assets/images/bg_photo.jpg');
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-        opacity : 0.8;
-    }
-
-    .shadow-span {
-        text-shadow: 0 0 5px #000000;
-    }
+    flex-flow: column;
 
     main {
         width: 100%;
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -49,7 +22,28 @@ $krakdroid-height: 100px;
         position: relative;
         padding: 20px 0;
 
+        .shadow-layer,
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .shadow-layer {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            background-image: url('../../assets/images/bg_photo.jpg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            opacity : 0.8;
+        }
         section {
+            z-index: 1;
             display: flex;
             flex-direction: column;
             max-width: 240px;
@@ -90,6 +84,9 @@ $krakdroid-height: 100px;
         section + section {
             margin-top: 25px;
         }
+    }
+    .shadow-span {
+        text-shadow: 0 0 5px #000000;
     }
 }
 

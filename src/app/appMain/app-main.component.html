@@ -1,7 +1,5 @@
-<div class="layer"></div>
-
 <main>
-
+    <div class="shadow-layer"></div>
     <section class="banner">
         <div class="krakdroid-wrapper">
             <img markup-inline class="krakdroid" src="../../assets/images/krakdroid-01.svg" alt="krakdroid">
@@ -13,10 +11,10 @@
     </section>
 
     <section class="address">
-    <span class="shadow-span">
-      WPiA Jagiellonian University, <br/>
-      ul. Krupnicza 33a, Kraków
-    </span>
+        <span class="shadow-span">
+          WPiA Jagiellonian University, <br/>
+          ul. Krupnicza 33a, Kraków
+        </span>
     </section>
 
     <section class="main-buttons">
@@ -29,3 +27,17 @@
     </section>
 
 </main>
+
+<app-section [title]="'About'">
+    This is content
+</app-section>
+
+<app-section class="dark"
+             [title]="'Recap'">
+    Recap content
+</app-section>
+
+<app-section class="green"
+             [title]="'Recap'">
+    Recap content
+</app-section>
