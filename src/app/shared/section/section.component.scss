@@ -21,20 +21,21 @@
     //Color mode
     &.dark {
         background-color: $dark;
-        color: $light;
-        header {
-            hr {
-                border-color: $light;
-            }
-        }
     }
     &.green {
         background-color: $green;
+    }
+    &.grey {
+        background-color: $grey;
+    }
+    &.dark, &.green, &.grey {
         color: $light;
-        header {
-            hr {
-                border-color: $light;
-            }
+        header hr {
+            border-color: $light;
         }
+    }
+
+    &.white {
+        background-color: $white;
     }
 }
