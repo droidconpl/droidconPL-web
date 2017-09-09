@@ -1,6 +1,7 @@
 @import "../shared/variables";
 @import "./krakdroid-animation";
 @import "../shared/components";
+@import "../shared/media-mixins";
 
 //TODO: extract all significant values to variables
 //TODO: refactoring of the code - make media more readable
@@ -22,6 +23,7 @@ $krakdroid-height: 100px;
         position: relative;
         padding: 20px 0;
 
+        //backgroud photo
         .shadow-layer,
         &::before {
             position: absolute;
@@ -90,6 +92,7 @@ $krakdroid-height: 100px;
     }
 }
 
+//TODO: rerite to mixins
 @media (min-width: 576px) {
     :host {
         main section {
@@ -217,4 +220,38 @@ $krakdroid-height: 100px;
             }
         }
     }
+}
+
+//---------------------Newsletter styling
+app-section.newsletter {
+    #mc_embed_signup {
+        width: 80%;
+        margin: 20px auto 0;
+
+        #mc_embed_signup_scroll {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+
+            .mc-field-group {
+                width: 100%;
+            }
+            .button {
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+@include media-md {
+    app-section.newsletter #mc_embed_signup {
+        #mc_embed_signup_scroll {
+            flex-flow: row;
+
+            .button {
+                margin: 0 10px;
+            }
+        }
+    }
+
 }

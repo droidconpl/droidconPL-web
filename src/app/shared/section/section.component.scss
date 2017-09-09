@@ -1,5 +1,6 @@
 @import "../variables";
 @import "../headers";
+@import "../media-mixins";
 
 :host {
     background-color: $light;
@@ -19,6 +20,9 @@
     }
 
     //Color mode
+    &.white {
+        background-color: $white;
+    }
     &.dark {
         background-color: $dark;
     }
@@ -34,8 +38,10 @@
             border-color: $light;
         }
     }
+}
 
-    &.white {
-        background-color: $white;
+@include media-md {
+    :host {
+        padding: 30px 0 50px;
     }
 }

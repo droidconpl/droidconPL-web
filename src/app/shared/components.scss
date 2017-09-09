@@ -1,18 +1,23 @@
 @import "variables";
+@import "media-mixins";
 
+//------------------Buttons
 .button {
-    color: white;
+    color: $white;
     background-color: $green;
     display: flex;
     width: 150px;
     height: 35px;
     align-items: center;
     justify-content: center;
+    border: none;
     border-radius: 5px;
     margin: 5px 10px;
     transition: background-color .2s ease-in;
     font-family: $neris-semi-bold;
     font-size: $font-xs;
+    cursor: pointer;
+    outline: none;
     &:hover, &:visited, &:active, &:focus {
         text-decoration: none;
     }
@@ -21,26 +26,43 @@
     }
 }
 
-@media (min-width: 576px) {
-    .button {
-        height: 40px;
-        width: 160px;
-    }
-}
-
-@media (min-width: 768px) {
+@include media-md {
     .button {
         height: 45px;
-        width: 180px;
-        font-size: $font-md;
+        width: 200px;
+        font-size: $font-lg;
         margin: 0 10px;
     }
 }
 
-@media (min-width: 992px) {
-    .button {
-        height: 55px;
-        width: 220px;
+//------------------Inputs
+.input {
+    width: 100%;
+    height: 35px;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    color: $dark;
+    font-size: $font-xs;
+    outline: none;
+}
+
+@include media-md {
+    .input {
+        height: 45px;
         font-size: $font-lg;
+    }
+}
+
+//------------------Paragraph
+p.small-paragraph {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+@include media-md {
+    p.small-paragraph {
+        width: 40%;
     }
 }
