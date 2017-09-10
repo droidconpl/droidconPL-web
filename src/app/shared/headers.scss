@@ -1,10 +1,21 @@
 @import 'variables';
+@import "media-mixins";
 
 h1, h2 {
     font-family: $neris-black;
+    font-size: 32px;
 }
 
 h3 {
     font-family: $neris-semi-bold;
     margin-bottom: 30px;
+}
+
+@include media-md {
+    h1, h2 {
+        font-size: 38px;
+    }
+
+    h3 {
+    }
 }

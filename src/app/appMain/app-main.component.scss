@@ -222,6 +222,23 @@ $krakdroid-height: 100px;
     }
 }
 
+//---------------------Featured video styling
+app-section.featured-video {
+    .video-frame {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+
+        iframe {
+            width: 80%;
+            height: 80%;
+        }
+        iframe + iframe {
+            margin-top: 20px;
+        }
+    }
+}
+
 //---------------------Newsletter styling
 app-section.newsletter {
     #mc_embed_signup {
