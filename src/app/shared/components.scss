@@ -55,14 +55,18 @@
 }
 
 //------------------Paragraph
-p.small-paragraph {
+p.small-paragraph,
+p.big-paragraph {
     width: 80%;
-    margin: 0 auto;
+    margin: 0 auto 10px;
     text-align: center;
 }
 
 @include media-md {
     p.small-paragraph {
         width: 40%;
+    }
+    p.big-paragraph {
+        width: 60%;
     }
 }

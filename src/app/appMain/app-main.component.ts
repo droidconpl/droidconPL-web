@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-  selector: 'app-main',
-  templateUrl: './app-main.component.html',
-  styleUrls: ['./app-main.component.scss']
+    selector: 'app-main',
+    templateUrl: './app-main.component.html',
+    styleUrls: [
+        './app-main.component.scss',
+        './time-place.scss'
+    ]
 })
 export class AppMainComponent {
 }

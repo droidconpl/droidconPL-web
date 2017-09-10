@@ -1,0 +1,40 @@
+@import "../shared/media-mixins";
+
+.time-place {
+  display: flex;
+  flex-flow: column;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+
+  .time, .place {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    width: 250px;
+
+    i.fa {
+      margin-right: 10px;
+      width: 20px;
+      text-align: center;
+    }
+  }
+}
+
+@include media-md {
+  .time-place {
+    flex-flow: row;
+
+    .time, .place {
+      width: 280px;
+    }
+  }
+}
+
+@include media-lg {
+  .time-place {
+    .time, .place {
+      width: 300px;
+    }
+  }
+}
