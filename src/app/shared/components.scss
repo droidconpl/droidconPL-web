@@ -24,6 +24,16 @@
     &:hover {
         background-color: $green-01;
     }
+
+    &.white {
+        color: $green;
+        background-color: $white;
+        &:hover {
+            background-color: transparent;
+            border: 2px solid $white;
+            color: $white;
+        }
+    }
 }
 
 @include media-md {

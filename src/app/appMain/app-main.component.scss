@@ -239,7 +239,46 @@ app-section.featured-video .video-frame {
     }
 }
 
-//---------------------Sponsors styling
+//---------------------Participate styling
+app-section.participate {
+    div + div {
+        margin-top: 20px;
+    }
+    img {
+        width: 60px;
+        margin: 20px auto 10px;
+        display: block;
+    }
+    a {
+        margin: 0 auto;
+    }
+}
+
+@include media-md {
+    app-section.participate {
+        div[class^=col-] {
+            display: flex;
+            flex-flow: column;
+        }
+        div + div {
+            margin-top: 0;
+        }
+        img {
+            width: 80px;
+            margin: 0 auto 20px;
+        }
+        p {
+            width: 100%;
+            flex: 1;
+        }
+        a {
+            margin-top: 10px;
+        }
+    }
+}
+
+
+//---------------------Submissions styling
 app-section.submission {
     a {
         margin: 20px auto 0;
