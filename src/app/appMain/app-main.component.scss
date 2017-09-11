@@ -1,47 +1,18 @@
 @import "../shared/variables";
 @import "./krakdroid-animation";
 @import "../shared/components";
-
-//TODO: extract all significant values to variables
-//TODO: refactoring of the code - make media more readable
-//TODO: extract sall components to shared components. Like buttons.
+@import "../shared/media-mixins";
+@import "../shared/link";
 
 $krakdroid-height: 100px;
 
 :host {
-    flex: 1;
     display: flex;
-    position: relative;
-    min-height: 60vh;
-
-    //bkg photo and blur
-    .layer,
-    &::before {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-    .layer {
-        background-color: rgba(0, 0, 0, 0.6);
-    }
-    &::before {
-        content: '';
-        position: absolute;
-        background-image: url('../../assets/images/bg_photo.jpg');
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-        opacity : 0.8;
-    }
-
-    .shadow-span {
-        text-shadow: 0 0 5px #000000;
-    }
+    flex-flow: column;
 
     main {
         width: 100%;
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -49,7 +20,29 @@ $krakdroid-height: 100px;
         position: relative;
         padding: 20px 0;
 
+        //backgroud photo
+        .shadow-layer,
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .shadow-layer {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            background-image: url('../../assets/images/bg_photo.jpg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            opacity : 0.8;
+        }
         section {
+            z-index: 1;
             display: flex;
             flex-direction: column;
             max-width: 240px;
@@ -91,38 +84,39 @@ $krakdroid-height: 100px;
             margin-top: 25px;
         }
     }
+    .shadow-span {
+        text-shadow: 0 0 5px #000000;
+    }
 }
 
-@media (min-width: 576px) {
-    :host {
-        main section {
-            &.banner {
-                .krakdroid-wrapper {
-                    .krakdroid {
-                        height: 1.5*$krakdroid-height;
-                    }
-                }
-                .conference-info {
-                    .name {
-                        font-size: 60px;
-                        line-height: 56px;
-                    }
-                    .date {
-                        font-size: 24px;
-                    }
+@include media-sm {
+    :host main section {
+        &.banner {
+            .krakdroid-wrapper {
+                .krakdroid {
+                    height: 1.5*$krakdroid-height;
                 }
             }
-            &.address {
-                font-size: 18px;
+            .conference-info {
+                .name {
+                    font-size: 60px;
+                    line-height: 56px;
+                }
+                .date {
+                    font-size: 24px;
+                }
             }
-            &.main-buttons {
-                justify-content: center;
-            }
+        }
+        &.address {
+            font-size: 18px;
+        }
+        &.main-buttons {
+            justify-content: center;
         }
     }
 }
 
-@media (min-width: 768px) {
+@include media-md {
     :host {
         main section {
             min-width: 500px;
@@ -161,63 +155,174 @@ $krakdroid-height: 100px;
     }
 }
 
-@media (min-width: 992px) {
-    :host {
-        main section {
-            max-width: 600px;
-            min-width: 600px;
-            &.banner {
-                .krakdroid-wrapper {
-                    width: 200px;
-                    .krakdroid {
-                        height: 2.5*$krakdroid-height;
-                    }
-                }
-                .conference-info {
-                    .name {
-                        font-size: 92px;
-                        line-height: 88px;
-                    }
-                    .date {
-                        font-size: 38px;
-                    }
+@include media-lg {
+    :host main section {
+        max-width: 600px;
+        min-width: 600px;
+        &.banner {
+            .krakdroid-wrapper {
+                width: 200px;
+                .krakdroid {
+                    height: 2.5*$krakdroid-height;
                 }
             }
-            &.address {
-                font-size: 22px;
-                padding-left: 200px;
+            .conference-info {
+                .name {
+                    font-size: 92px;
+                    line-height: 88px;
+                }
+                .date {
+                    font-size: 38px;
+                }
+            }
+        }
+        &.address {
+            font-size: 22px;
+            padding-left: 200px;
+        }
+    }
+}
+
+@include media-xl {
+    :host main section {
+        max-width: 800px;
+        min-width: 800px;
+
+        &.banner {
+            .krakdroid-wrapper {
+                width: 280px;
+                .krakdroid {
+                    height: 3.5*$krakdroid-height;
+                    margin-right: 40px;
+                }
+            }
+            .conference-info {
+                .name {
+                    font-size: 127px;
+                    line-height: 120px;
+                }
+                .date {
+                    font-size: 52px;
+                }
+            }
+        }
+        &.address {
+            font-size: 26px;
+            padding-left: 280px;
+        }
+    }
+}
+
+//---------------------Featured video styling
+app-section.featured-video .video-frame {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-bottom: 20px;
+
+    iframe {
+        width: 80%;
+        height: 80%;
+        margin-top: 20px;
+    }
+}
+
+@include media-md {
+    app-section.featured-video .video-frame {
+        flex-flow: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        iframe {
+            width: auto;
+        }
+    }
+}
+
+//---------------------Participate styling
+app-section.participate {
+    div + div {
+        margin-top: 20px;
+    }
+    img {
+        width: 60px;
+        margin: 20px auto 10px;
+        display: block;
+    }
+    a {
+        margin: 0 auto;
+    }
+}
+
+@include media-md {
+    app-section.participate {
+        div[class^=col-] {
+            display: flex;
+            flex-flow: column;
+        }
+        div + div {
+            margin-top: 0;
+        }
+        img {
+            width: 80px;
+            margin: 0 auto 20px;
+        }
+        p {
+            width: 100%;
+            flex: 1;
+        }
+        a {
+            margin-top: 10px;
+        }
+    }
+}
+
+
+//---------------------Submissions styling
+app-section.submission {
+    a {
+        margin: 20px auto 0;
+    }
+}
+
+//---------------------Sponsors styling
+app-section.sponsors {
+    a {
+        margin: 20px auto 0;
+    }
+}
+
+
+//---------------------Newsletter styling
+app-section.newsletter {
+    #mc_embed_signup {
+        width: 80%;
+        margin: 20px auto 0;
+
+        #mc_embed_signup_scroll {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+
+            .mc-field-group {
+                width: 100%;
+            }
+            .button {
+                margin-top: 10px;
             }
         }
     }
 }
 
-@media (min-width: 1200px) {
-    :host {
-        main section {
-            max-width: 800px;
-            min-width: 800px;
-            &.banner {
-                .krakdroid-wrapper {
-                    width: 280px;
-                    .krakdroid {
-                        height: 3.5*$krakdroid-height;
-                        margin-right: 40px;
-                    }
-                }
-                .conference-info {
-                    .name {
-                        font-size: 127px;
-                        line-height: 120px;
-                    }
-                    .date {
-                        font-size: 52px;
-                    }
-                }
-            }
-            &.address {
-                font-size: 26px;
-                padding-left: 280px;
+@include media-md {
+    app-section.newsletter #mc_embed_signup {
+        #mc_embed_signup_scroll {
+            flex-flow: row;
+
+            .button {
+                margin: 0 10px;
             }
         }
     }
+
 }
