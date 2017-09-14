@@ -1,69 +1,71 @@
-<nav class="navbar navbar-expand-md fixed-top">
-    <a class="navbar-brand" routerLink="" routerLinkActive="active">
-        <!--TODO: put the logo here-->
-        Brand
-    </a>
-    <button class="navbar-toggler" type="button"
-            data-toggle="collapse" data-target="#navbarContent"
-            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"
-            (click)="isOpen = !isOpen">
-        <div id="nav-icon-toggler" [class.open]="isOpen">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-md">
+        <a class="navbar-brand" routerLink="" routerLinkActive="active">
+            <!--TODO: put the logo here-->
+            Brand
+        </a>
+        <button class="navbar-toggler" type="button"
+                data-toggle="collapse" data-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"
+                (click)="isOpen = !isOpen">
+            <div id="nav-icon-toggler" [class.open]="isOpen">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="" routerLinkActive="active">Home</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle"
+                       href="http://example.com"
+                       id="aboutDropdownLink"
+                       data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        About
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="aboutDropdownLink">
+                        <li class="dropdown-item">
+                            <a class="nav-link" routerLink="/code-of-conduct" routerLinkActive="active">Code of Conduct</a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a class="nav-link" routerLink="/faq" routerLinkActive="active">FAQ</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown" *ngIf="programAvailable">
+                    <a class="nav-link dropdown-toggle"
+                       href="http://example.com"
+                       id="programDropdownLink"
+                       data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Program '17
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="aboutDropdownLink">
+                        <li class="dropdown-item"></li>
+                        <li class="dropdown-item"></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link button green"
+                       href="https://goo.gl/forms/j2o5cgCfF3mIgI523"
+                       target="_blank">Call For Papers</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link button green"
+                       href="https://goo.gl/jDTiXm"
+                       target="_blank">TICKETS</a>
+                </li>
+            </ul>
         </div>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" routerLink="" routerLinkActive="active">Home</a>
-            </li>
-
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle"
-                   href="http://example.com"
-                   id="aboutDropdownLink"
-                   data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    About
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="aboutDropdownLink">
-                    <li class="dropdown-item">
-                        <a class="nav-link" routerLink="/code-of-conduct" routerLinkActive="active">Code of Conduct</a>
-                    </li>
-                    <li class="dropdown-item">
-                        <a class="nav-link" routerLink="/faq" routerLinkActive="active">FAQ</a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-item dropdown" *ngIf="programAvailable">
-                <a class="nav-link dropdown-toggle"
-                   href="http://example.com"
-                   id="programDropdownLink"
-                   data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    Program '17
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="aboutDropdownLink">
-                    <li class="dropdown-item"></li>
-                    <li class="dropdown-item"></li>
-                </ul>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link button green"
-                   href="https://goo.gl/forms/j2o5cgCfF3mIgI523"
-                   target="_blank">Call For Papers</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link button green"
-                   href="https://goo.gl/jDTiXm"
-                   target="_blank">TICKETS</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+    </nav>
+</div>

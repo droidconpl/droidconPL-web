@@ -1,9 +1,65 @@
 @import '../shared/variables';
 
-:host nav {
-    background-color: $light;
+$link-padding: 10px;
+$line-height: 30px;
+$link-height: 2*$link-padding + $line-height;
 
-    &, & a {
-        color: $dark;
+:host {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $white;
+    z-index: $menu-index;
+
+    //TODO: Add widths to each screen size
+    .container-fluid {
+
+    }
+
+    nav.navbar {
+        position: unset;
+        padding: 0;
+
+        ul {
+            li.nav-item {
+                a.nav-link {
+                    font-family: $neris-black;
+                    padding: $link-padding;
+                    line-height: $line-height;
+                }
+            }
+            li.dropdown {
+                position: unset;
+
+                ul.dropdown-menu {
+                    top: $link-height;
+                    margin-top: 0;
+                    border: none;
+                    border-radius: 0;
+                    left: 0;
+                    right: 0;
+                    flex-flow: row;
+                    justify-content: flex-end;
+                    padding: 0;
+                    background-color: $light;
+
+                    &.show {
+                        display: flex;
+                    }
+                    li.dropdown-item {
+                        width: auto;
+                    }
+
+                    a.nav-link {
+                        font-family: $neris-semi-bold;
+                    }
+                }
+            }
+        }
+
+        &, & a {
+            color: $dark;
+        }
     }
 }
