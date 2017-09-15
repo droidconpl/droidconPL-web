@@ -16,6 +16,17 @@ $link-height: 2*$link-padding + $line-height;
         position: unset;
         padding: 0;
 
+        a.navbar-brand {
+            padding: 0;
+            margin: 0;
+
+            img {
+                height: 40px;
+                padding: 10px;
+                box-sizing: content-box;
+            }
+        }
+
         ul {
             li.nav-item {
                 a.nav-link {
