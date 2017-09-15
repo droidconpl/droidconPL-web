@@ -12,11 +12,6 @@ $link-height: 2*$link-padding + $line-height;
     background-color: $white;
     z-index: $menu-index;
 
-    //TODO: Add widths to each screen size
-    .container-fluid {
-
-    }
-
     nav.navbar {
         position: unset;
         padding: 0;

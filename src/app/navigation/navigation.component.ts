@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
   selector: 'navigation',
   templateUrl: './navigation.component.html',
   styleUrls: [
+      './navigation-container.scss',
       './nav-icon-toggler.scss',
       './navigation.component.scss'
   ]
