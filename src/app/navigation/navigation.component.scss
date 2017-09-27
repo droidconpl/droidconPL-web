@@ -45,10 +45,9 @@ $link-height: 2*$link-padding + $line-height;
                     border-radius: 0;
                     left: 0;
                     right: 0;
-                    flex-flow: row;
+                    flex-flow: column;
                     justify-content: flex-end;
                     padding: 0;
-                    background-color: $light;
 
                     &.show {
                         display: flex;
@@ -59,6 +58,8 @@ $link-height: 2*$link-padding + $line-height;
 
                     a.nav-link {
                         font-family: $neris-semi-bold;
+                        line-height: 20px;
+                        padding: 5px;
                     }
                 }
             }
@@ -66,6 +67,12 @@ $link-height: 2*$link-padding + $line-height;
 
         &, & a {
             color: $dark;
+        }
+        a.green {
+            color: $green;
+        }
+        #aboutDropdownLink::after {
+            display: none;
         }
     }
 }
