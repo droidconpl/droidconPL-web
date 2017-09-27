@@ -19,7 +19,13 @@ export class NavigationComponent {
         console.log(this.isOpen);
     }
 
+    public togglerVisible() {
+        return this.navbarToggler.nativeElement.offsetParent !== null;
+    }
+
     public toggleNav() {
-        this.navbarToggler.nativeElement.click();
+        if (this.togglerVisible()) {
+            this.navbarToggler.nativeElement.click();
+        }
     }
 }

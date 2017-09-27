@@ -1,8 +1,8 @@
 @import '../shared/variables';
+@import "../shared/media-mixins";
 
 $link-padding: 10px;
 $line-height: 30px;
-$link-height: 2*$link-padding + $line-height;
 
 :host {
     position: fixed;
@@ -27,34 +27,23 @@ $link-height: 2*$link-padding + $line-height;
             }
         }
 
-        ul {
-            li.nav-item {
-                a.nav-link {
-                    font-family: $neris-black;
-                    padding: $link-padding;
-                    line-height: $line-height;
+        ul.navbar-nav {
+            a.nav-link {
+                font-family: $neris-black;
+                padding: $link-padding;
+                line-height: $line-height;
+                color: $dark;
+
+                &.green {
+                    color: $green;
                 }
             }
             li.dropdown {
                 position: unset;
 
                 ul.dropdown-menu {
-                    top: $link-height;
-                    margin-top: 0;
                     border: none;
                     border-radius: 0;
-                    left: 0;
-                    right: 0;
-                    flex-flow: column;
-                    justify-content: flex-end;
-                    padding: 0;
-
-                    &.show {
-                        display: flex;
-                    }
-                    li.dropdown-item {
-                        width: auto;
-                    }
 
                     a.nav-link {
                         font-family: $neris-semi-bold;
@@ -65,14 +54,45 @@ $link-height: 2*$link-padding + $line-height;
             }
         }
 
-        &, & a {
-            color: $dark;
-        }
-        a.green {
-            color: $green;
-        }
         #aboutDropdownLink::after {
             display: none;
+        }
+    }
+}
+
+$navbar-height-md: 60px;
+
+@include media-md {
+    :host nav.navbar {
+        height: $navbar-height-md;
+
+        a.navbar-brand {
+            height: inherit;
+
+            img {
+                height: inherit;
+                box-sizing: border-box;
+            }
+        }
+
+        ul.navbar-nav li.dropdown ul.dropdown-menu {
+            top: $navbar-height-md;
+            margin-top: 0;
+            left: 0;
+            right: 0;
+            flex-flow: row;
+            justify-content: flex-end;
+            padding: 0;
+            background-color: $light-2;
+
+            &.show {
+                display: flex;
+            }
+            li.dropdown-item {
+                width: auto;
+            }
+            //a.nav-link {
+            //}
         }
     }
 }
