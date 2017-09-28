@@ -4,7 +4,7 @@ import {Component, ElementRef, ViewChild} from '@angular/core';
     selector: 'navigation',
     templateUrl: './navigation.component.html',
     styleUrls: [
-        './navigation-container.scss',
+        '../shared/containers.scss',
         './nav-icon-toggler.scss',
         './navigation.component.scss'
     ]

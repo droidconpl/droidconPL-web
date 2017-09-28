@@ -1,7 +1,28 @@
 @import "media-mixins";
 
+@include media-md {
+    .container {
+        width: 700px;
+    }
+    .container-fluid {
+        width: 740px;
+    }
+}
+
 @include media-lg {
     .container {
+        width: 800px;
+    }
+    .container-fluid {
+        width: 860px;
+    }
+}
+
+@include media-xl {
+    .container {
         width: 920px;
+    }
+    .container-fluid {
+        width: 1180px;
     }
 }
