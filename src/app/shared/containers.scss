@@ -1,0 +1,7 @@
+@import "media-mixins";
+
+@include media-lg {
+    .container {
+        width: 920px;
+    }
+}

@@ -234,7 +234,8 @@ app-section.featured-video .video-frame {
         justify-content: space-evenly;
 
         iframe {
-            width: auto;
+            height: 150px;
+            width: 270px;
         }
     }
 }
