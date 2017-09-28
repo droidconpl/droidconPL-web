@@ -41,14 +41,30 @@ $line-height: 30px;
             li.dropdown {
                 position: unset;
 
-                ul.dropdown-menu {
+                div.dropdown-menu {
                     border: none;
                     border-radius: 0;
+                    margin-top: 0;
+                    padding: 0;
 
+                    ul.submenu {
+                        display: flex;
+                        flex-flow: column;
+                        padding: 0;
+
+                        li.dropdown-item {
+                            outline: none;
+
+                            &:active, &:hover, &:focus {
+                                background-color: transparent;
+                            }
+                        }
+                    }
                     a.nav-link {
                         font-family: $neris-semi-bold;
                         line-height: 20px;
                         padding: 5px;
+                        outline: none;
                     }
                 }
             }
@@ -75,7 +91,7 @@ $navbar-height-md: 60px;
             }
         }
 
-        ul.navbar-nav li.dropdown ul.dropdown-menu {
+        ul.navbar-nav li.dropdown div.dropdown-menu {
             top: $navbar-height-md;
             margin-top: 0;
             left: 0;
@@ -88,11 +104,55 @@ $navbar-height-md: 60px;
             &.show {
                 display: flex;
             }
-            li.dropdown-item {
-                width: auto;
+
+            ul.submenu {
+                display: flex;
+                flex-flow: row;
+                justify-content: flex-end;
+
+                li.dropdown-item {
+                    width: auto;
+                    padding: 5px 10px;
+                }
             }
-            //a.nav-link {
-            //}
+
+        }
+    }
+}
+
+$navbar-height-lg: 90px;
+
+@include media-lg {
+    :host nav.navbar {
+        height: $navbar-height-lg;
+
+        a.navbar-brand {
+            display: flex;
+            align-items: center;
+            img {
+                height: 54px;
+                box-sizing: content-box;
+            }
+        }
+
+        ul.navbar-nav {
+
+            li.nav-item {
+                a.nav-link {
+                    font-size: 22px;
+                    padding: 10px 30px;
+                }
+            }
+
+            li.dropdown div.dropdown-menu {
+                top: $navbar-height-lg;
+
+                a.nav-link {
+                    line-height: 25px;
+                    font-size: 17px;
+                    padding: 5px 15px;
+                }
+            }
         }
     }
 }

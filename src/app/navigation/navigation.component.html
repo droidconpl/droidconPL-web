@@ -38,20 +38,25 @@
                        aria-haspopup="true" aria-expanded="false">
                         About
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="aboutDropdownLink">
-                        <li class="dropdown-item">
-                            <a class="nav-link"
-                               routerLink="/code-of-conduct"
-                               routerLinkActive="active"
-                               (click)="toggleNav()">Code of Conduct</a>
-                        </li>
-                        <li class="dropdown-item">
-                            <a class="nav-link"
-                               routerLink="/faq"
-                               routerLinkActive="active"
-                               (click)="toggleNav()">FAQ</a>
-                        </li>
-                    </ul>
+                    <div class="dropdown-menu">
+                        <div class="container-fluid">
+                            <ul class="submenu" aria-labelledby="aboutDropdownLink">
+                                <li class="dropdown-item">
+                                    <a class="nav-link"
+                                       routerLink="/code-of-conduct"
+                                       routerLinkActive="active"
+                                       (click)="toggleNav()">Code of Conduct</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a class="nav-link"
+                                       routerLink="/faq"
+                                       routerLinkActive="active"
+                                       (click)="toggleNav()">FAQ</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </li>
 
                 <li class="nav-item dropdown" *ngIf="programAvailable">

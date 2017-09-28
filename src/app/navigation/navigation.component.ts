@@ -16,7 +16,6 @@ export class NavigationComponent {
 
     public toggle() {
         this.isOpen = !this.isOpen;
-        console.log(this.isOpen);
     }
 
     public togglerVisible() {
