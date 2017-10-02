@@ -1,0 +1,39 @@
+<app-section class="partner-block light"
+             [title]="'Meet our Partners'">
+    <p class="big-paragraph">
+        droidcon Kraków has many friends. We wouldn't be where we are now without them.
+        We help each other to share news about events and news among the communities.
+
+    </p>
+
+    <div class="partner-block community-partners container">
+        <!--<div class="row title">-->
+            <!--<div class="col">-->
+                <!--<span>Community Partners</span>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="row partners">
+            <a href="{{i.link}}"
+               target="_blank"
+               *ngFor="let i of partnerArray"
+               class="partner"
+               [class.disactivate]="!i.link">
+                <img src="{{i.logoFile}}" alt="{{i.name}} logo">
+            </a>
+        </div>
+    </div>
+
+    <!--<div class="partner-block media-partners container">-->
+        <!--<div class="row">-->
+            <!--<div class="col">-->
+                <!--<span>Media Partners</span>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="row">-->
+            <!--<div *ngFor="let i of [1,2,3,4,5]" class="partner col">Logo {{i}}</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <a href="mailto:contact+partner@droidcon.pl" class="button"
+       target="_blank" rel="noopener">Become a partner</a>
+</app-section>
