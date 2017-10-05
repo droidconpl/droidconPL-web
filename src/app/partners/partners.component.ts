@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
 
 interface Partner {
     name: string;
@@ -42,4 +43,11 @@ export class PartnersComponent {
             link: "https://crossweb.pl"
         }
     ];
+
+    public partners: any;
+
+    constructor(public af: AngularFireDatabase) {
+        af.list<Partner>('partners').valueChanges()
+            .subscribe(partners => this.partners = partners);
+    }
 }
