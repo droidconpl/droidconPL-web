@@ -13,12 +13,12 @@
             <!--</div>-->
         <!--</div>-->
         <div class="row partners">
-            <a href="{{i.link}}"
+            <a href="{{i.websitelink}}"
                target="_blank"
                *ngFor="let i of partners"
                class="partner"
-               [class.disactivate]="!i.link">
-                <img src="{{i.logoFile}}" alt="{{i.name}} logo">
+               [class.disactivate]="!i.websitelink">
+                <img src="{{i.logourl}}" alt="{{i.name}} logo">
             </a>
         </div>
     </div>

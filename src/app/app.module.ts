@@ -17,12 +17,12 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 export const firebaseConfig = {
-    apiKey: "AIzaSyCI9EMJZT83cWBYICcf_q9yeOFld5aHrsg",
-    authDomain: "droidconpl-test.firebaseapp.com",
-    databaseURL: "https://droidconpl-test.firebaseio.com",
-    projectId: "droidconpl-test",
-    storageBucket: "droidconpl-test.appspot.com",
-    messagingSenderId: "77598036364"
+    apiKey: "AIzaSyAWT7UTaCaGsGDMr1mjQ8-Z7PtU4-lXF0M",
+    authDomain: "droidconpl2017.firebaseapp.com",
+    databaseURL: "https://droidconpl2017.firebaseio.com",
+    projectId: "droidconpl2017",
+    storageBucket: "droidconpl2017.appspot.com",
+    messagingSenderId: "25196666268"
 };
 
 @NgModule({
