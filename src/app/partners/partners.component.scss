@@ -2,25 +2,13 @@
 @import "../shared/media-mixins";
 
 :host {
-
     .partner-block {
-        & + .partner-block{
-            margin-top: 20px;
-        }
+        margin-top: 20px;
     }
-
-    .title {
-        margin-bottom: 20px;
-        span {
-            font-family: $neris-semi-bold;
-        }
-    }
-
     .partners {
         display: flex;
         justify-content: center;
     }
-
     .partner {
         display: flex;
         align-items: center;
@@ -37,7 +25,6 @@
             max-height: 100%;
         }
     }
-
     a.button {
         margin: 20px auto 0;
     }
@@ -46,9 +33,7 @@
 @include media-md {
     :host {
         .partner-block {
-            & + .partner-block{
-                margin-top: 40px;
-            }
+            margin-top: 40px;
         }
         .partner {
             width: 100px;
@@ -63,6 +48,10 @@
         .partner {
             width: 120px;
             height: 120px;
+            margin: 15px;
+        }
+        a.button {
+            margin: 40px auto 0;
         }
     }
 }
