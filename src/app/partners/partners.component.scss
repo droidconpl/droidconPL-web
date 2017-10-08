@@ -1,0 +1,57 @@
+@import "../shared/components";
+@import "../shared/media-mixins";
+
+:host {
+    .partner-block {
+        margin-top: 20px;
+    }
+    .partners {
+        display: flex;
+        justify-content: center;
+    }
+    .partner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+        margin: 5px;
+
+        &.disactivate {
+            pointer-events: none;
+        }
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+    a.button {
+        margin: 20px auto 0;
+    }
+}
+
+@include media-md {
+    :host {
+        .partner-block {
+            margin-top: 40px;
+        }
+        .partner {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
+    }
+}
+
+@include media-lg {
+    :host {
+        .partner {
+            width: 120px;
+            height: 120px;
+            margin: 15px;
+        }
+        a.button {
+            margin: 40px auto 0;
+        }
+    }
+}

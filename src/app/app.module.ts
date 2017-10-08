@@ -10,6 +10,21 @@ import { NavigationModule } from './navigation/navigation.module';
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 import {AppComponent} from './app.component';
 
+import { AngularFireModule } from 'angularfire2';
+
+// New imports to update based on AngularFire2 version 4
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+export const firebaseConfig = {
+    apiKey: "AIzaSyAWT7UTaCaGsGDMr1mjQ8-Z7PtU4-lXF0M",
+    authDomain: "droidconpl2017.firebaseapp.com",
+    databaseURL: "https://droidconpl2017.firebaseio.com",
+    projectId: "droidconpl2017",
+    storageBucket: "droidconpl2017.appspot.com",
+    messagingSenderId: "25196666268"
+};
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -18,6 +33,9 @@ import {AppComponent} from './app.component';
         AppFooterModule,
         AboutModule,
         NavigationModule,
+        AngularFireModule.initializeApp(firebaseConfig),
+        AngularFireDatabaseModule,
+        AngularFireAuthModule
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy}
