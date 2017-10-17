@@ -7,20 +7,6 @@
     padding: 30px 0;
     display: block;
 
-    header {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-        .title {
-            margin-right: 10px;
-            max-width: 80%;
-        }
-        hr {
-            flex: 1;
-            border-top: 1px solid $dark;
-        }
-    }
-
     //Color mode
     &.white {
         background-color: $white;
@@ -36,9 +22,6 @@
     }
     &.dark, &.green, &.grey {
         color: $light;
-        header hr {
-            border-color: $light;
-        }
     }
 
     // View mode
@@ -53,15 +36,5 @@
 @include media-md {
     :host {
         padding: 30px 0 50px;
-
-        header {
-            margin-bottom: 20px;
-            .title {
-                margin-right: 50px;
-            }
-            hr {
-                border-top: 2px solid $dark;
-            }
-        }
     }
 }
