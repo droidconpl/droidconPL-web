@@ -1,0 +1,81 @@
+@import "../shared/components";
+@import "../shared/media-mixins";
+@import "../shared/variables";
+
+:host {
+    flex: 1;
+
+    .speakers {
+        display: flex;
+        justify-content: space-between;
+    }
+    .speaker {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: flex-start;
+        max-width: 150px;
+        margin: 10px auto;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 100%;
+            margin-bottom: 10px;
+        }
+        span {
+            text-align: center;
+            font-size: $font-xxs;
+            color: $dark;
+        }
+        span.name {
+            font-family: $neris-semi-bold;
+            font-size: $font-xs;
+        }
+    }
+    a.button {
+        margin: 20px auto 0;
+    }
+}
+
+@include media-sm {
+    :host {
+        .speaker {
+            max-width: 180px;
+        }
+    }
+}
+
+@include media-md {
+    :host {
+        .speaker {
+            max-width: 200px;
+
+            span {
+                font-size: $font-xs;
+            }
+            span.name {
+                font-size: $font-sm;
+            }
+        }
+    }
+}
+
+@include media-lg {
+    :host {
+        .speaker {
+            max-width: 250px;
+            margin: 15px auto;
+
+            span {
+                font-size: $font-md;
+            }
+            span.name {
+                font-size: $font-lg;
+            }
+        }
+        a.button {
+            margin: 40px auto 0;
+        }
+    }
+}

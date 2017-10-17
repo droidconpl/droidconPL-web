@@ -15,6 +15,7 @@ import { AngularFireModule } from 'angularfire2';
 // New imports to update based on AngularFire2 version 4
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { SpeakersModule } from './speakers/speakers.module';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyAWT7UTaCaGsGDMr1mjQ8-Z7PtU4-lXF0M",
@@ -32,6 +33,7 @@ export const firebaseConfig = {
         AppMainModule,
         AppFooterModule,
         AboutModule,
+        SpeakersModule,
         NavigationModule,
         AngularFireModule.initializeApp(firebaseConfig),
         AngularFireDatabaseModule,

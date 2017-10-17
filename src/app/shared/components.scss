@@ -15,7 +15,7 @@
     margin: 5px 10px;
     transition: background-color .2s ease-in;
     font-family: $neris-semi-bold;
-    font-size: $font-xs;
+    font-size: $font-sm;
     cursor: pointer;
     outline: none;
     &:hover, &:visited, &:active, &:focus {
@@ -53,7 +53,7 @@
     border: none;
     border-radius: 5px;
     color: $dark;
-    font-size: $font-xs;
+    font-size: $font-sm;
     outline: none;
 }
 
