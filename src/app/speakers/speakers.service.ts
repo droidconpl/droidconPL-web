@@ -3,6 +3,7 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
 export interface Speaker {
     id: number;
+    key: string;
     name: string;
     surname: string;
     title: string;

@@ -24,6 +24,22 @@
         }
         .biography {
             margin-top: 20px;
+            text-align: justify;
+            width: 100%;
+        }
+    }
+    .talk {
+        .title {
+            color: $green;
+            font-family: $neris-black;
+            font-size: $font-md;
+            text-align: left;
+            margin: 20px 0;
+        }
+        .description {
+            text-align: justify;
+            width: 100%;
+            margin-bottom: 20px;
         }
     }
 
@@ -51,8 +67,11 @@
             .biography {
                 margin: 0;
                 margin-top: 30px;
-                width: 100%;
-                text-align: justify;
+            }
+        }
+        .talk {
+            .title {
+                font-size: $font-lg;
             }
         }
     }
@@ -68,6 +87,14 @@
             span.name {
                 font-size: 28px;
             }
+        }
+        .talk {
+            .title {
+                font-size: 28px;
+            }
+        }
+        a.button {
+            margin: 20px auto 0;
         }
     }
 }
