@@ -35,4 +35,12 @@ export class SpeakersService {
                 .limitToFirst(limit)
         );
     }
+
+    getByKey(key: string): AngularFireList<Speaker> {
+        return this.db.list<Speaker>('speakers', ref =>
+            ref.orderByChild('key')
+                .equalTo(key)
+                .limitToFirst(1)
+        );
+    }
 }
