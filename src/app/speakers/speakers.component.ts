@@ -1,33 +1,27 @@
-import { Component } from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database';
-
-interface Speaker {
-    id: number;
-    name: string;
-    surname: string;
-    title: string;
-    biography: string;
-    twitter?: string;
-    facebook?: string;
-    github?: string;
-    linkedin?: string;
-    website?: string;
-    photourl: string;
-    published: boolean;
-}
+import { Component, OnInit } from '@angular/core';
+import { SpeakersService } from './speakers.service';
 
 @Component({
     selector: 'speakers',
     templateUrl: './speakers.component.html',
-    styleUrls: ['./speakers.component.scss']
+    styleUrls: ['./speakers.component.scss'],
+    providers: [
+        SpeakersService
+    ]
 })
-export class SpeakersComponent {
+export class SpeakersComponent implements OnInit {
     public speakers: any;
 
-    constructor(public af: AngularFireDatabase) {
-        af.list<Speaker>('speakers', ref => ref.orderByChild('published').equalTo(true))
+    constructor(private speakersService: SpeakersService) {
+    }
+
+    ngOnInit() {
+        this.get();
+    }
+
+    get(): void {
+        this.speakersService.get()
             .valueChanges()
             .subscribe(speakers => this.speakers = speakers);
     }
-
 }

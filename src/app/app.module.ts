@@ -37,7 +37,7 @@ export const firebaseConfig = {
         NavigationModule,
         AngularFireModule.initializeApp(firebaseConfig),
         AngularFireDatabaseModule,
-        AngularFireAuthModule
+        AngularFireAuthModule,
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy}
