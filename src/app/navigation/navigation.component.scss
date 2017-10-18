@@ -70,7 +70,8 @@ $line-height: 30px;
             }
         }
 
-        #aboutDropdownLink::after {
+        #aboutDropdownLink::after,
+        #programDropdownLink::after {
             display: none;
         }
     }
@@ -168,7 +169,7 @@ $link-shadow-lg: 0px 18px 0px -16px ;
             li.nav-item {
                 a.nav-link {
                     font-size: 22px;
-                    padding: 5px 30px;
+                    padding: 5px 20px;
                     &:hover {
                         -webkit-box-shadow: $link-shadow-lg $dark;
                         -moz-box-shadow: $link-shadow-lg $dark;

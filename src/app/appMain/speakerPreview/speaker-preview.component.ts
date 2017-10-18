@@ -27,7 +27,7 @@ export class SpeakerPreview implements OnInit {
             grid: { xs: 1, sm: 2, md: 3, lg: 3, all: 0 },
             slide: 2,
             speed: 400,
-            interval: 4000,
+            interval: 3000,
             point: {
                 visible: true
             },

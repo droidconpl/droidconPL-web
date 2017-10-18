@@ -7,6 +7,7 @@ import { SpeakerPreview } from './speakerPreview/speaker-preview.component';
 import { NgxCarouselModule } from 'ngx-carousel';
 import 'hammerjs';
 import { ProfileModule } from '../shared/profile/profile.module';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
     imports: [
@@ -15,6 +16,7 @@ import { ProfileModule } from '../shared/profile/profile.module';
         PartnersModule,
         NgxCarouselModule,
         ProfileModule,
+        AppRoutingModule,
     ],
     declarations: [
         AppMainComponent,
