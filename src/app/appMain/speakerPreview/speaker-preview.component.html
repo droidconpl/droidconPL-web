@@ -1,15 +1,10 @@
 <app-section [title]="'17 lineup'">
     <ngx-carousel
-        [inputs]="carouselOne"
-        (carouselLoad)="myFunc($event)">
+        [inputs]="carouselOne">
         <ngx-item *ngFor="let i of speakers" NgxCarouselItem>
-            <a href=""
-               target="_blank"
-               class="speaker col-6 col-sm-4">
-                <img src="{{i.photourl}}" alt="{{i.name}} photo">
-                <span class="name">{{i.name}} {{i.surname}}</span>
-                <span class="title">{{i.title}}</span>
-            </a>
+            <profile class="col-6 col-sm-4"
+                     [profile]="i"
+            ></profile>
         </ngx-item>
         <button NgxCarouselPrev class='leftRs'>&lt;</button>
         <button NgxCarouselNext class='rightRs'>&gt;</button>

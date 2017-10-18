@@ -2,19 +2,14 @@
              [title]="'droidcon \'17 lineup'">
     <p class="big-paragraph">
         We are excited to share with you...
-
     </p>
 
     <div class="container">
         <div class="row speakers">
-            <a href=""
-               target="_blank"
-               *ngFor="let i of speakers"
-               class="speaker col-6 col-sm-4">
-                <img src="{{i.photourl}}" alt="{{i.name}} photo">
-                <span class="name">{{i.name}} {{i.surname}}</span>
-                <span class="title">{{i.title}}</span>
-            </a>
+            <profile class="col-6 col-sm-4"
+                     *ngFor="let i of speakers"
+                     [profile]="i"
+            ></profile>
         </div>
     </div>
 

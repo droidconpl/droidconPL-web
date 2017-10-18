@@ -6,6 +6,7 @@ import {PartnersModule} from "../partners/partners.module";
 import { SpeakerPreview } from './speakerPreview/speaker-preview.component';
 import { NgxCarouselModule } from 'ngx-carousel';
 import 'hammerjs';
+import { ProfileModule } from '../shared/profile/profile.module';
 
 @NgModule({
     imports: [
@@ -13,6 +14,7 @@ import 'hammerjs';
         AppSectionModule,
         PartnersModule,
         NgxCarouselModule,
+        ProfileModule,
     ],
     declarations: [
         AppMainComponent,
