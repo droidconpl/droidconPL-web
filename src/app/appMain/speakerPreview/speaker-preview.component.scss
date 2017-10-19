@@ -1,0 +1,11 @@
+@import "../../shared/components";
+
+:host {
+    .fa {
+        visibility: hidden;
+    }
+
+    a.button {
+        margin: 0 auto;
+    }
+}

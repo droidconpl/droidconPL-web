@@ -1,0 +1,100 @@
+@import "../../shared/components";
+@import "../../shared/variables";
+@import "../../shared/media-mixins";
+
+:host {
+    flex: 1;
+
+    .speaker {
+        display: flex;
+        flex-flow: column;
+
+        img {
+            height: 200px;
+            margin: 0 auto 10px;
+            border-radius: 100%;
+        }
+        span {
+            display: block;
+            text-align: center;
+        }
+        span.name {
+            font-family: $neris-semi-bold;
+            font-size: $font-md;
+        }
+        .biography {
+            margin-top: 20px;
+            text-align: justify;
+            width: 100%;
+        }
+    }
+    .talk {
+        .title {
+            color: $green;
+            font-family: $neris-black;
+            font-size: $font-md;
+            text-align: left;
+            margin: 20px 0;
+        }
+        .description {
+            text-align: justify;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+
+    a.button {
+        margin: 0 auto;
+        color: $white;
+    }
+}
+
+@include media-sm {
+    :host {
+        .speaker {
+            flex-flow: row;
+
+            img {
+                height: 250px;
+                margin: 0 30px 0 0;
+            }
+            span {
+                text-align: left;
+            }
+            span.name {
+                font-size: $font-lg;
+            }
+            .biography {
+                margin: 0;
+                margin-top: 30px;
+            }
+        }
+        .talk {
+            .title {
+                font-size: $font-lg;
+            }
+        }
+    }
+}
+
+@include media-md {
+    :host {
+        .speaker {
+            img {
+                height: 300px;
+                margin: 0 50px 20px 0;
+            }
+            span.name {
+                font-size: 28px;
+            }
+        }
+        .talk {
+            .title {
+                font-size: 28px;
+            }
+        }
+        a.button {
+            margin: 20px auto 0;
+        }
+    }
+}

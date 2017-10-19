@@ -56,21 +56,28 @@
                             </ul>
                         </div>
                     </div>
-
                 </li>
 
-                <li class="nav-item dropdown" *ngIf="programAvailable">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle"
-                       href="http://example.com"
+                       href=""
                        id="programDropdownLink"
                        data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
                         Program '17
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="aboutDropdownLink">
-                        <li class="dropdown-item"></li>
-                        <li class="dropdown-item"></li>
-                    </ul>
+                    <div class="dropdown-menu">
+                        <div class="container-fluid">
+                            <ul class="submenu" aria-labelledby="programDropdownLink">
+                                <li class="dropdown-item">
+                                    <a class="nav-link"
+                                       routerLink="/speakers"
+                                       routerLinkActive="active"
+                                       (click)="toggleNav()">Speakers</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </li>
 
                 <li class="nav-item">

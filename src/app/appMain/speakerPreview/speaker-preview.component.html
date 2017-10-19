@@ -1,0 +1,14 @@
+<app-section [title]="'#droidconPL2017 lineup'">
+    <ngx-carousel
+        [inputs]="carouselOne">
+        <ngx-item *ngFor="let i of speakers" NgxCarouselItem>
+            <profile class="col-6 col-sm-4"
+                     [profile]="i"
+            ></profile>
+        </ngx-item>
+        <i NgxCarouselPrev class="fa fa-chevron-left" aria-hidden="true"></i>
+        <i NgxCarouselNext class="fa fa-chevron-right" aria-hidden="true"></i>
+    </ngx-carousel>
+
+    <a class="button" routerLink="/speakers" routerLinkActive="active">View all</a>
+</app-section>

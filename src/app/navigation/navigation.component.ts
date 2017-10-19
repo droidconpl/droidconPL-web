@@ -12,7 +12,7 @@ import {Component, ElementRef, ViewChild} from '@angular/core';
 export class NavigationComponent {
     @ViewChild('navbarToggler') navbarToggler: ElementRef;
     public isOpen: boolean = false;
-    public programAvailable: boolean = false;
+    public programAvailable: boolean = true;
 
     public toggle() {
         this.isOpen = !this.isOpen;

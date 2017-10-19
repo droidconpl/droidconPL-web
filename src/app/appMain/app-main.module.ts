@@ -3,15 +3,24 @@ import { AppSectionModule } from '../shared/section/section.module';
 import { AppMainComponent } from './app-main.component';
 import {CommonModule} from "@angular/common";
 import {PartnersModule} from "../partners/partners.module";
+import { SpeakerPreview } from './speakerPreview/speaker-preview.component';
+import { NgxCarouselModule } from 'ngx-carousel';
+import 'hammerjs';
+import { ProfileModule } from '../shared/profile/profile.module';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
     imports: [
         CommonModule,
         AppSectionModule,
         PartnersModule,
+        NgxCarouselModule,
+        ProfileModule,
+        AppRoutingModule,
     ],
     declarations: [
         AppMainComponent,
+        SpeakerPreview,
     ],
     exports: [
         AppMainComponent,

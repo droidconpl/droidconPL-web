@@ -1,0 +1,41 @@
+@import "../../variables";
+@import "../../headers";
+@import "../../media-mixins";
+
+:host {
+    header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+
+        .title {
+            margin-right: 10px;
+            max-width: 80%;
+        }
+        hr {
+            flex: 1;
+            border-top: 1px solid $dark;
+        }
+    }
+}
+
+:host-context(.dark, .green, .grey) {
+    header hr {
+        border-color: $light;
+    }
+}
+
+@include media-md {
+    :host {
+        header {
+            margin-bottom: 20px;
+
+            .title {
+                margin-right: 50px;
+            }
+            hr {
+                border-top: 2px solid $dark;
+            }
+        }
+    }
+}
