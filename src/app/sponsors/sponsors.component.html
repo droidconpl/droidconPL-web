@@ -1,0 +1,23 @@
+<app-section class="partner-block white"
+             [title]="'Become a sponsor'">
+    <p class="big-paragraph">
+        If you want to become a sponsor for droidcon Kraków 2017,
+        please contact us to get detailed sponsors offer.
+    </p>
+
+    <div class="partner-block community-partners container">
+        <div class="row partners">
+            <a href="{{i.websiteurl}}"
+               target="_blank"
+               *ngFor="let i of sponsors"
+               class="partner"
+               [class.disactivate]="!i.websiteurl">
+                <img src="{{i.logourl}}" alt="{{i.name}} logo">
+                <span>{{i.type}} sponsor</span>
+            </a>
+        </div>
+    </div>
+
+    <a href="mailto:contact+sponsor@droidcon.pl" class="button"
+       target="_blank" rel="noopener">Get offer</a>
+</app-section>

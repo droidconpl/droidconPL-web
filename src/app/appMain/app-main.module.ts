@@ -8,12 +8,14 @@ import { NgxCarouselModule } from 'ngx-carousel';
 import 'hammerjs';
 import { ProfileModule } from '../shared/profile/profile.module';
 import { AppRoutingModule } from '../app-routing.module';
+import {SponsorsModule} from "../sponsors/sponsors.module";
 
 @NgModule({
     imports: [
         CommonModule,
         AppSectionModule,
         PartnersModule,
+        SponsorsModule,
         NgxCarouselModule,
         ProfileModule,
         AppRoutingModule,
