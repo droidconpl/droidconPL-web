@@ -21,11 +21,9 @@ export class TalksService {
         );
     }
 
-    //TODO: fix for edge cases
     getBySpeakerKey(speakerKey: string): AngularFireList<Talk> {
         return this.db.list<Talk>('talks', ref =>
-            ref.orderByChild('speakerkey')
-                .limitToFirst(1)
+            ref.orderByChild('speakerkey').equalTo(speakerKey)
         );
     }
 }
