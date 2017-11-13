@@ -23,9 +23,7 @@ export class TalksService {
 
     getBySpeakerKey(speakerKey: string): AngularFireList<Talk> {
         return this.db.list<Talk>('talks', ref =>
-            ref.orderByChild('speakerkey')
-                .equalTo(speakerKey)
-                .limitToFirst(1)
+            ref.orderByChild('speakerkey').equalTo(speakerKey)
         );
     }
 }
