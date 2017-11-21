@@ -2,11 +2,13 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
 export interface Talk {
-    speakerkey: string;
+    id: number;
     title: string;
     description: string;
     duration: string;
     tags: string;
+    published: boolean;
+    speakerkey: string;
 }
 
 @Injectable()

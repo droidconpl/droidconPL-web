@@ -1,0 +1,13 @@
+@import "../shared/media-mixins";
+@import "../shared/variables";
+
+:host {
+    .loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+        width: 100%;
+        color: $green;
+    }
+}

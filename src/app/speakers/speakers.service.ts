@@ -15,6 +15,7 @@ export interface Speaker {
     website?: string;
     photourl: string;
     published: boolean;
+    talkid: boolean;
 }
 
 @Injectable()
@@ -26,6 +27,13 @@ export class SpeakersService {
         return this.db.list<Speaker>(
             'speakers',
             ref => ref.orderByChild('published').equalTo(true),
+        );
+    }
+
+    getByTalkId(talkId: number): AngularFireList<Speaker> {
+        return this.db.list<Speaker>('speakers', ref =>
+            ref.orderByChild('talkid')
+                .equalTo(talkId)
         );
     }
 

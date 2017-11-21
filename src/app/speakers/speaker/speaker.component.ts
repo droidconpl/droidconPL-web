@@ -1,4 +1,3 @@
-import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
@@ -20,7 +19,6 @@ export class SpeakerComponent implements OnInit {
     public talk: any;
 
     constructor(private route: ActivatedRoute,
-                private location: Location,
                 private speakersService: SpeakersService,
                 private talksService: TalksService) {
         this.route.params.subscribe(params => {

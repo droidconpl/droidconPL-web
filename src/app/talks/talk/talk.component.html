@@ -1,0 +1,26 @@
+<div class="title"
+     (click)="toggle()">
+    <span>{{talk.title}}</span>
+    <i class="fa fa-chevron-down"
+       aria-hidden="true"
+       *ngIf="!toggled"
+    ></i>
+    <i class="fa fa-chevron-up"
+       aria-hidden="true"
+       *ngIf="toggled"
+    ></i>
+</div>
+<div class="description" *ngIf="toggled">
+    {{talk.description}}
+    <div class="additional-info">
+        <span>Length: <strong>{{talk.duration}}</strong></span>
+        <span>Tags: <strong>{{talk.tags}}</strong></span>
+        <span class="speaker">
+            Speaker: <a *ngFor="let speaker of speakers"
+                        class="link green"
+                        [routerLink]="['/speakers', speaker.key]"
+                        routerLinkActive="active">{{speaker.name}} {{speaker.surname}}</a>
+        </span>
+    </div>
+
+</div>
