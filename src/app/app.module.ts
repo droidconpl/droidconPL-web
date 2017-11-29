@@ -19,6 +19,7 @@ import { SpeakersModule } from './speakers/speakers.module';
 import { bootstrap4Mode, BootstrapModalModule } from 'ngx-modialog/plugins/bootstrap';
 import { ModalModule } from 'ngx-modialog';
 import {TalksModule} from "./talks/talks.module";
+import {AgendaModule} from "./agenda/agenda.module";
 
 bootstrap4Mode();
 
@@ -40,6 +41,7 @@ export const firebaseConfig = {
         AboutModule,
         SpeakersModule,
         TalksModule,
+        AgendaModule,
         NavigationModule,
         AngularFireModule.initializeApp(firebaseConfig),
         AngularFireDatabaseModule,

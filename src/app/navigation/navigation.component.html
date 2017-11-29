@@ -71,6 +71,12 @@
                             <ul class="submenu" aria-labelledby="programDropdownLink">
                                 <li class="dropdown-item">
                                     <a class="nav-link"
+                                       routerLink="/agenda"
+                                       routerLinkActive="active"
+                                       (click)="toggleNav()">Agenda</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a class="nav-link"
                                        routerLink="/speakers"
                                        routerLinkActive="active"
                                        (click)="toggleNav()">Speakers</a>

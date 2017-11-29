@@ -23,6 +23,13 @@ export class TalksService {
         );
     }
 
+    getById(id: number): AngularFireList<Talk> {
+        return this.db.list<Talk>(
+            'talks',
+            ref => ref.orderByChild('id').equalTo(id),
+        );
+    }
+
     getBySpeakerKey(speakerKey: string): AngularFireList<Talk> {
         return this.db.list<Talk>('talks', ref =>
             ref.orderByChild('speakerkey').equalTo(speakerKey)

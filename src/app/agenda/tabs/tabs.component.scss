@@ -1,0 +1,30 @@
+@import '../../shared/variables';
+@import "../../shared/media-mixins";
+
+:host {
+    ul {
+        list-style-type: none;
+        display: flex;
+        padding: 0;
+        border-bottom: 2px solid $green;
+        margin-bottom: 0;
+
+        li {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            width: 50%;
+            height: 50px;
+            cursor: pointer;
+            font-family: $neris-semi-bold;
+            font-size: 16px;
+            color: $dark;
+
+            &.active {
+                border-bottom: 3px solid $green;
+                font-size: 20px;
+                font-family: $neris-black;
+            }
+        }
+    }
+}

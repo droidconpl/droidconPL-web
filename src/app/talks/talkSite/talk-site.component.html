@@ -1,0 +1,30 @@
+<app-section class="separate-page light">
+    <div *ngIf="!(talk && speakers)" class="loading">
+        <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+        <span class="sr-only">Loading...</span>
+    </div>
+
+    <div *ngIf="talk && speakers" class="container">
+        <div class="row talk">
+            <span class="title">{{talk.title}}</span>
+            <p class="big-paragraph description">{{talk.description}}</p>
+        </div>
+    </div>
+
+    <hr/>
+
+    <div *ngIf="talk && speakers" class="container">
+        <div *ngFor="let speaker of speakers" class="row speaker">
+            <img src="{{speaker.photourl}}" alt="{{speaker.name}} photo">
+            <div class="description">
+                <span class="name">{{speaker.name}} {{speaker.surname}}</span>
+                <span class="title">{{speaker.title}}</span>
+                <p class="big-paragraph biography">
+                    {{speaker.biography}}
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <a class="button" routerLink="/agenda" routerLinkActive="active">Back to the agenda</a>
+</app-section>

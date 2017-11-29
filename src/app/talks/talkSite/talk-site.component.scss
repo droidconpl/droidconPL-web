@@ -1,0 +1,110 @@
+@import "../../shared/components";
+@import "../../shared/variables";
+@import "../../shared/media-mixins";
+
+:host {
+    flex: 1;
+
+    .loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+        width: 100%;
+        color: $green;
+    }
+    .talk {
+        .title {
+            color: $green;
+            font-family: $neris-black;
+            font-size: $font-md;
+            text-align: left;
+            margin: 20px 0;
+        }
+        .description {
+            text-align: justify;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+    .speaker {
+        display: flex;
+        flex-flow: column;
+        margin-bottom: 30px;
+
+        img {
+            height: 200px;
+            margin: 0 auto 10px;
+            border-radius: 100%;
+        }
+        span {
+            display: block;
+            text-align: center;
+        }
+        span.name {
+            font-family: $neris-semi-bold;
+            font-size: $font-md;
+        }
+        .biography {
+            margin-top: 20px;
+            text-align: justify;
+            width: 100%;
+        }
+    }
+    a.button {
+        margin: 0 auto;
+        color: $white;
+    }
+}
+
+@include media-sm {
+    :host {
+        .talk {
+            .title {
+                font-size: $font-lg;
+            }
+        }
+        .speaker {
+            flex-flow: row;
+            margin-bottom: 50px;
+
+            img {
+                height: 250px;
+                margin: 0 30px 0 0;
+            }
+            span {
+                text-align: left;
+            }
+            span.name {
+                font-size: $font-lg;
+            }
+            .biography {
+                margin: 0;
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
+@include media-md {
+    :host {
+        .talk {
+            .title {
+                font-size: 28px;
+            }
+        }
+        .speaker {
+            margin-bottom: 70px;
+            img {
+                height: 300px;
+                margin: 0 50px 20px 0;
+            }
+            span.name {
+                font-size: 28px;
+            }
+        }
+        a.button {
+            margin: 20px auto 0;
+        }
+    }
+}

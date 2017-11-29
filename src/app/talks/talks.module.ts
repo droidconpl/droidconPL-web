@@ -4,6 +4,7 @@ import { AppSectionModule } from '../shared/section/section.module';
 import { AppRoutingModule } from '../app-routing.module';
 import {TalksComponent} from "./talks.component";
 import {TalkComponent} from "./talk/talk.component";
+import {TalkSiteComponent} from "./talkSite/talk-site.component";
 
 @NgModule({
     imports: [
@@ -14,10 +15,12 @@ import {TalkComponent} from "./talk/talk.component";
     declarations: [
         TalksComponent,
         TalkComponent,
+        TalkSiteComponent,
     ],
     exports: [
         TalksComponent,
         TalkComponent,
+        TalkSiteComponent,
     ]
 })
 export class TalksModule {}
