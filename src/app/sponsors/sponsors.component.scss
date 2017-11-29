@@ -2,39 +2,35 @@
 @import "../shared/media-mixins";
 
 :host {
-    .partner-block {
-        margin-top: 20px;
-    }
     .partners {
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 15px;
     }
     .partner {
         display: flex;
         flex-flow: column;
         align-items: center;
         justify-content: center;
-        width: 80px;
-        height: 80px;
-        margin: 5px;
+        width: 120px;
+        margin: 10px;
 
         &:hover {
             text-decoration: none;
             color: $dark;
         }
-
-        &.disactivate {
-            pointer-events: none;
-        }
         img {
             max-width: 100%;
-            max-height: 100%;
+            max-height: 60px;
+            margin-bottom: 5px;
         }
         span {
             font-size: $font-xxs;
             font-weight: 600;
             color: $dark;
             margin-top: 5px;
+            white-space: nowrap;
         }
     }
     a.button {
@@ -44,14 +40,12 @@
 
 @include media-md {
     :host {
-        .partner-block {
-            margin-top: 40px;
-        }
         .partner {
-            width: 100px;
-            height: 100px;
-            margin: 10px;
+            width: 150px;
 
+            img {
+                max-height: 70px;
+            }
             span {
                 font-size: $font-xs;
             }
@@ -61,13 +55,18 @@
 
 @include media-lg {
     :host {
+        .partners {
+            margin-bottom: 30px;
+        }
         .partner {
-            width: 120px;
-            height: 120px;
+            width: 230px;
             margin: 15px;
 
+            img {
+                max-height: 120px;
+            }
             span {
-                font-size: $font-sm;
+                font-size: $font-md;
             }
         }
         a.button {
