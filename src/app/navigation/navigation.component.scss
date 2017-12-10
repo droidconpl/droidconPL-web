@@ -4,13 +4,71 @@
 $link-padding: 10px;
 $line-height: 30px;
 
+$navbar-height-md: 60px;
+$link-shadow-md: 0px 6px 0px -4px;
+
+
+$navbar-height-lg: 90px;
+$link-shadow-lg: 0px 18px 0px -16px ;
+
+@mixin box-shadow($size, $color) {
+    -webkit-box-shadow: $size $color;
+    -moz-box-shadow: $size $color;
+    box-shadow: $size $color;
+}
+
+a.nav-link {
+    font-family: $neris-semi-bold;
+    padding: $link-padding;
+    line-height: $line-height;
+    color: $white;
+
+    &.green {
+        color: $green;
+    }
+}
+@include media-md {
+    a.nav-link {
+        padding: 0 10px;
+        transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+        &:hover {
+            @include box-shadow($link-shadow-md, $white);
+        }
+        &.green:hover {
+            @include box-shadow(0px 0px 0px 2px, $green);
+        }
+    }
+}
+@include media-lg {
+    a.nav-link {
+        padding: 5px 20px;
+        &:hover {
+            @include box-shadow($link-shadow-lg, $white)
+        }
+        &.green:hover {
+            @include box-shadow(0px 0px 0px 2px, $green);
+        }
+    }
+}
+
 :host {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    background-color: $white;
     z-index: $menu-index;
+    font-size: $font-md;
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    &.fixed {
+        background: $white;
+        font-size: $font-sm;
+
+        #nav-icon-toggler span {
+            color: $dark;
+        }
+    }
 
     nav.navbar {
         position: unset;
@@ -28,16 +86,7 @@ $line-height: 30px;
         }
 
         ul.navbar-nav {
-            a.nav-link {
-                font-family: $neris-black;
-                padding: $link-padding;
-                line-height: $line-height;
-                color: $dark;
 
-                &.green {
-                    color: $green;
-                }
-            }
             li.dropdown {
                 position: unset;
 
@@ -69,16 +118,12 @@ $line-height: 30px;
                 }
             }
         }
-
         #aboutDropdownLink::after,
         #programDropdownLink::after {
             display: none;
         }
     }
 }
-
-$navbar-height-md: 60px;
-$link-shadow-md: 0px 6px 0px -4px;
 
 @include media-md {
     :host nav.navbar {
@@ -94,22 +139,6 @@ $link-shadow-md: 0px 6px 0px -4px;
         }
 
         ul.navbar-nav {
-            a.nav-link {
-                padding: 0 10px;
-                transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-
-                &:hover {
-                    -webkit-box-shadow: $link-shadow-md $dark;
-                    -moz-box-shadow: $link-shadow-md $dark;
-                    box-shadow: $link-shadow-md $dark;
-                }
-                &.green:hover {
-                    -webkit-box-shadow: 0px 0px 0px 2px $green;
-                    -moz-box-shadow: 0px 0px 0px 2px $green;
-                    box-shadow: 0px 0px 0px 2px $green;
-                }
-            }
-
             li.dropdown div.dropdown-menu {
                 top: $navbar-height-md;
                 margin-top: 0;
@@ -135,9 +164,7 @@ $link-shadow-md: 0px 6px 0px -4px;
                         a.nav-link {
                             padding: 2px 5px;
                             &:hover {
-                                -webkit-box-shadow: 0 2px 0 0 $dark;
-                                -moz-box-shadow: 0 2px 0 0 $dark;
-                                box-shadow: 0 2px 0 0 $dark;
+                                @include box-shadow(0 2px 0 0, $white);
                             }
                         }
                     }
@@ -147,9 +174,6 @@ $link-shadow-md: 0px 6px 0px -4px;
         }
     }
 }
-
-$navbar-height-lg: 90px;
-$link-shadow-lg: 0px 18px 0px -16px ;
 
 @include media-lg {
     :host nav.navbar {
@@ -165,24 +189,6 @@ $link-shadow-lg: 0px 18px 0px -16px ;
         }
 
         ul.navbar-nav {
-
-            li.nav-item {
-                a.nav-link {
-                    font-size: 22px;
-                    padding: 5px 20px;
-                    &:hover {
-                        -webkit-box-shadow: $link-shadow-lg $dark;
-                        -moz-box-shadow: $link-shadow-lg $dark;
-                        box-shadow: $link-shadow-lg $dark;
-                    }
-                    &.green:hover {
-                        -webkit-box-shadow: 0px 0px 0px 2px $green;
-                        -moz-box-shadow: 0px 0px 0px 2px $green;
-                        box-shadow: 0px 0px 0px 2px $green;
-                    }
-                }
-            }
-
             li.dropdown div.dropdown-menu {
                 top: $navbar-height-lg;
 

@@ -20,6 +20,7 @@ import { bootstrap4Mode, BootstrapModalModule } from 'ngx-modialog/plugins/boots
 import { ModalModule } from 'ngx-modialog';
 import {TalksModule} from "./talks/talks.module";
 import {AgendaModule} from "./agenda/agenda.module";
+import {WINDOW_PROVIDERS} from "./navigation/window.service";
 
 bootstrap4Mode();
 
@@ -50,7 +51,8 @@ export const firebaseConfig = {
         BootstrapModalModule,
     ],
     providers: [
-        {provide: LocationStrategy, useClass: HashLocationStrategy}
+        {provide: LocationStrategy, useClass: HashLocationStrategy},
+        WINDOW_PROVIDERS,
     ],
     declarations: [
         AppComponent
