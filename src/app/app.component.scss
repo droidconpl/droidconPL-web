@@ -4,7 +4,7 @@
 :host {
     background-color: $bg-light;
     font-family: $neris-light;
-    font-size: 16px;
+    font-size: $font-sm;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -12,13 +12,13 @@
 
 @include media-md {
     :host {
-        font-size: 18px;
+        font-size: $font-md;
     }
 }
 
 @include media-lg {
     :host {
-        font-size: 20px;
+        font-size: $font-lg;
     }
 }
 
