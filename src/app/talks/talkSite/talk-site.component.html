@@ -8,6 +8,8 @@
         <div class="row talk">
             <span class="title">{{talk.title}}</span>
             <p class="big-paragraph description">{{talk.description}}</p>
+
+            <a *ngIf="talk.slidesurl" href="{{talk.slidesurl}}" class="button" target="_blank">Open slides</a>
         </div>
     </div>
 
