@@ -5,7 +5,8 @@ import { Component } from '@angular/core';
   templateUrl: './code-of-conduct.component.html',
   styleUrls: [
       '../shared/containers.scss',
-      './code-of-conduct.component.scss'
+      '../shared/headers.scss',
+      '../shared/link.scss',
   ]
 })
 export class CodeOfConductComponent {

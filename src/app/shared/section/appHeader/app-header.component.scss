@@ -3,39 +3,54 @@
 @import "../../media-mixins";
 
 :host {
-    header {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
+  header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
 
-        .title {
-            margin-right: 10px;
-            max-width: 80%;
-        }
-        hr {
-            flex: 1;
-            border-top: 1px solid $dark;
-        }
+    .title {
+      font-size: $header-font-sm;
+      font-family: $neris-black;
+      margin-right: 10px;
+      max-width: 80%;
     }
-}
-
-:host-context(.dark, .green, .grey) {
-    header hr {
-        border-color: $light;
+    hr {
+      flex: 1;
+      border-top: 1px solid $dark;
     }
+  }
 }
 
 @include media-md {
-    :host {
-        header {
-            margin-bottom: 20px;
+  :host {
+    header {
+      margin-bottom: 40px;
 
-            .title {
-                margin-right: 50px;
-            }
-            hr {
-                border-top: 2px solid $dark;
-            }
-        }
+      .title {
+        font-size: $header-font-md;
+        margin-right: 50px;
+      }
+      hr {
+        border-bottom-width: 2px;
+      }
     }
+  }
+}
+
+@include media-lg {
+  :host {
+    header {
+      margin-bottom: 60px;
+
+      .title {
+        font-size: $header-font-lg;
+      }
+    }
+  }
+}
+
+:host-context(.dark, .green, .grey) {
+  header hr {
+    border-color: $light;
+  }
 }

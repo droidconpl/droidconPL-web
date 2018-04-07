@@ -1,23 +1,9 @@
 @import '../shared/headers';
 @import '../shared/link';
 @import '../shared/components';
-@import "../shared/media-mixins";
 
 :host {
-    flex: 1;
-    padding: 80px 0 20px;
-
-    section {
-        margin-top: 20px;
-    }
-
     .block {
         display: block;
-    }
-}
-
-@include media-lg {
-    :host {
-        padding: 120px 0 40px;
     }
 }

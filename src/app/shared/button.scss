@@ -1,0 +1,45 @@
+@import "variables";
+@import "media-mixins";
+
+.button {
+  color: $white;
+  background-color: $green;
+  display: flex;
+  width: 150px;
+  height: 35px;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 5px;
+  margin: 5px 10px;
+  transition: background-color .2s ease-in;
+  font-family: $neris-semi-bold;
+  font-size: $font-sm;
+  cursor: pointer;
+  outline: none;
+  &:hover, &:visited, &:active, &:focus {
+    text-decoration: none;
+  }
+  &:hover {
+    background-color: $green-01;
+  }
+
+  &.white {
+    color: $green;
+    background-color: $white;
+    &:hover {
+      background-color: transparent;
+      border: 2px solid $white;
+      color: $white;
+    }
+  }
+}
+
+@include media-md {
+  .button {
+    height: 45px;
+    width: 200px;
+    font-size: $font-lg;
+    margin: 0 10px;
+  }
+}
