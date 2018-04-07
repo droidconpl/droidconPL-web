@@ -2,126 +2,122 @@
 @import "../shared/link";
 
 :host {
-    background-color: $bg-dark;
-    width: 100%;
-    color: white;
-    font-family: $neris-black;
-    font-size: $font-sm;
-    padding: 10px 0;
+  background-color: $bg-dark;
+  width: 100%;
+  color: white;
+  font-size: $font-sm;
+  padding: 10px 0;
 
-    footer {
-        text-align: center;
+  footer {
+    text-align: center;
 
-        section {
-            margin-bottom: 10px;
+    section {
+      margin-bottom: 10px;
 
-            div+div {
-                margin-top: 10px;
-            }
+      &:last-child {
+        margin-bottom: 0;
+      }
+      span.header {
+        font-family: $neris-black;
+        margin-bottom: 3px;
+      }
+      .items {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      &.social-media {
+        height: 24px;
 
-            &:last-child {
-                margin-bottom: 0;
-            }
-            h1 {
-                font-size: inherit;
-                margin-bottom: 3px;
-            }
-            a + a {
-                margin-left: 20px;
-            }
-
-            &.social-media {
-                a {
-                    display: inline-block;
-                    height: 20px;
-                }
-                a * {
-                    height: inherit;
-                }
-                a + a {
-                    margin-left: 25px;
-                }
-                a:hover .cls-1{
-                    fill: $green;
-                }
-            }
-
-            &.droidcon-global {
-                img {
-                    height: 20px;
-                    margin-right: 10px;
-                }
-                p {
-                    display: inline-block;
-                    margin: 0 auto 5px;
-                    text-align: left;
-                }
-            }
+        a {
+          height: 100%;
         }
+        a * {
+          height: inherit;
+        }
+        a + a {
+          margin-left: 25px;
+        }
+        a:hover .cls-1 {
+          fill: $green;
+        }
+      }
+
+      &.droidcon-global {
+        img {
+          height: 20px;
+          margin-right: 10px;
+        }
+        p {
+          display: inline-block;
+          margin: 0 auto 5px;
+          text-align: left;
+        }
+      }
     }
+  }
 }
 
 @media (min-width: 576px) {
-    :host {
-        padding: 20px 0;
-    }
+  :host {
+    padding: 20px 0;
+  }
 }
 
 @media (min-width: 992px) {
-    :host {
-        footer {
-            text-align: left;
+  :host {
+    footer {
+      text-align: left;
 
-            .row {
-                min-height: 100px;
-                & + .row {
-                    margin-top: 20px;
-                }
-            }
-            section {
-                margin-bottom: 0;
-                font-size: $font-md;
-                height: inherit;
-
-                &.social-media,
-                &.droidcon-global {
-                    display: flex;
-                    align-items: flex-start;
-                    justify-content: flex-end;
-
-                    a {
-                        height: 30px;
-                    }
-                    a + a {
-                        margin-left: 25px;
-                    }
-                }
-
-                &.droidcon-global {
-                    img {
-                        height: 30px;
-                        margin-right: 10px;
-                    }
-                    p {
-                        font-family: $neris-light;
-                        display: inline-block;
-                        margin: 0;
-                        text-align: left;
-                    }
-                }
-            }
+      .row {
+        min-height: 100px;
+        & + .row {
+          margin-top: 20px;
         }
+      }
+      section {
+        margin-bottom: 0;
+        font-size: $font-md;
+        height: inherit;
+
+        &.social-media,
+        &.droidcon-global {
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-end;
+
+          a {
+            height: 30px;
+          }
+          a + a {
+            margin-left: 25px;
+          }
+        }
+
+        &.droidcon-global {
+          img {
+            height: 30px;
+            margin-right: 10px;
+          }
+          p {
+            font-family: $neris-light;
+            display: inline-block;
+            margin: 0;
+            text-align: left;
+          }
+        }
+      }
     }
+  }
 }
 
 @media (min-width: 1200px) {
-    :host {
-        footer section {
-            &.social-media {
-                a + a {
-                    margin-left: 35px;
-                }
-            }
+  :host {
+    footer section {
+      &.social-media {
+        a + a {
+          margin-left: 35px;
         }
+      }
     }
+  }
 }
