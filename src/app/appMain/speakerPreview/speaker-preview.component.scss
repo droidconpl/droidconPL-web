@@ -1,11 +1,11 @@
-@import "../../shared/components";
+@import "../../shared/paragraph";
 
 :host {
     .fa {
         visibility: hidden;
     }
 
-    a.button {
+    sh-button {
         margin: 0 auto;
     }
 }

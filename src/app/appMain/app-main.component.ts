@@ -5,7 +5,8 @@ import {Component} from '@angular/core';
     templateUrl: './app-main.component.html',
     styleUrls: [
         './app-main.component.scss',
-        './time-place.scss'
+        './time-place.scss',
+        "../shared/paragraph.scss",
     ]
 })
 export class AppMainComponent {

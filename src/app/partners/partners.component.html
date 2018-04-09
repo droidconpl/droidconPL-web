@@ -1,9 +1,8 @@
-<app-section class="partner-block light"
+<app-section class="light"
              [title]="'Meet our Partners'">
     <p class="big-paragraph">
         droidcon Kraków has many friends. We wouldn't be where we are now without them.
         We help each other to share news about events and news among the communities.
-
     </p>
 
     <div class="partner-block community-partners container">
@@ -18,6 +17,7 @@
         </div>
     </div>
 
-    <a href="mailto:contact+partner@droidcon.pl" class="button"
-       target="_blank" rel="noopener">Become a partner</a>
+    <sh-button [url]="'mailto:contact+partner@droidcon.pl'"
+               [isExternal]="true"
+    >Become a partner</sh-button>
 </app-section>

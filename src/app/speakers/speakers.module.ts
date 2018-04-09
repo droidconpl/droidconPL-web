@@ -5,6 +5,7 @@ import { SpeakersComponent } from './speakers.component';
 import { ProfileModule } from '../shared/profile/profile.module';
 import { SpeakerComponent } from './speaker/speaker.component';
 import { AppRoutingModule } from '../app-routing.module';
+import {SharedModule} from "../shared/shared.module";
 
 @NgModule({
     imports: [
@@ -12,6 +13,7 @@ import { AppRoutingModule } from '../app-routing.module';
         AppRoutingModule,
         AppSectionModule,
         ProfileModule,
+        SharedModule,
     ],
     declarations: [
         SpeakersComponent,

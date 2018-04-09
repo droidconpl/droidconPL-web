@@ -1,5 +1,7 @@
-@import 'variables';
+@import '../variables';
 
+//TODO: switch to :host
+//TODO: adjust custom classes
 a.link {
     font-family: $neris-light;
     text-decoration: none;

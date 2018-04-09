@@ -7,7 +7,7 @@ import { SpeakersService} from "../../speakers/speakers.service";
     templateUrl: './talk.component.html',
     styleUrls: [
         './talk.component.scss',
-        '../../shared/link.scss',
+        '../../shared/link/link.component.scss',
     ],
     providers: [
         SpeakersService,

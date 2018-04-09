@@ -1,9 +1,9 @@
-@import "../shared/components";
+@import "../shared/paragraph";
 @import "../shared/media-mixins";
 
 :host {
     .partner-block {
-        margin-top: 20px;
+        margin: 20px 0;
     }
     .partners {
         display: flex;
@@ -25,16 +25,13 @@
             max-height: 100%;
         }
     }
-    a.button {
+    sh-button {
         margin: 20px auto 0;
     }
 }
 
 @include media-md {
     :host {
-        .partner-block {
-            margin-top: 40px;
-        }
         .partner {
             width: 100px;
             height: 100px;
@@ -45,13 +42,13 @@
 
 @include media-lg {
     :host {
+        .partner-block {
+            margin: 40px 0;
+        }
         .partner {
             width: 120px;
             height: 120px;
             margin: 15px;
-        }
-        a.button {
-            margin: 40px auto 0;
         }
     }
 }

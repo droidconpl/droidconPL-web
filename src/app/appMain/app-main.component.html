@@ -18,14 +18,15 @@
     </section>
 
     <section class="main-buttons">
-        <a class="button green"
-           href=""
-           routerLink="/agenda"
-           routerLinkActive="active"
-           rel="noopener">Agenda</a>
-        <a class="button green"
-           href="https://goo.gl/jDTiXm"
-           target="_blank" rel="noopener">Tickets</a>
+        <sh-button routerLink="/agenda"
+                   routerLinkActive="active"
+        >Agenda</sh-button>
+        <sh-button routerLink="/agenda"
+                   routerLinkActive="active"
+        >Agenda</sh-button>
+        <sh-button routerLink="/agenda"
+                   routerLinkActive="active"
+        >Agenda</sh-button>
     </section>
 
     <section class="get-app">
@@ -77,9 +78,9 @@
                 frameborder="0" allowfullscreen></iframe>
     </div>
     <p class="small-paragraph">
-        <a class="link green" href="https://www.youtube.com/c/droidconKrakow" target="_blank" rel="noopener">
-            Watch all
-        </a>
+        <sh-link [hrefUrl]="'https://www.youtube.com/c/droidconKrakow'"
+                [isExternal]="true"
+        >Watch all</sh-link>
     </p>
 </app-section>
 
@@ -93,9 +94,10 @@
                     New place, more new speakers, two days full of android talks! You simply
                     must be there this year!
                 </p>
-                <a class="button white"
-                   href="https://goo.gl/jDTiXm"
-                   target="_blank" rel="noopener">Buy a ticket</a>
+                <sh-button [url]="'https://goo.gl/jDTiXm'"
+                           [isExternal]="true"
+                           class="white"
+                >Buy a ticket</sh-button>
             </div>
             <div class="col-12 col-md-4">
                 <img src="../../assets/images/teach_button.png" alt="Talkin bubble icon">
@@ -110,29 +112,16 @@
                     Help us make the conference a better event simply by donating, volunteering or supporting us in
                     social media! Contact us for more information!
                 </p>
-                <a href="mailto:contact@droidcon.pl" class="button white"
-                   target="_blank" rel="noopener">Contact us</a>
+                <sh-button [url]="'mailto:contact@droidcon.pl'"
+                           [isExternal]="true"
+                           class="white"
+                >Contact us</sh-button>
             </div>
         </div>
     </div>
 </app-section>
 
 <speaker-preview></speaker-preview>
-
-<app-section class="submission dark"
-             [title]="'Call For Papers'"
-             *ngIf="c4p">
-    <p class="big-paragraph">
-        Every year we try to select the best talks out of all submissions to keep a very high level of technical talks.
-    </p>
-    <p class="big-paragraph">
-        Be a part of the lineup and submit your talk until 31st October!
-    </p>
-    <a class="button green"
-       href="https://goo.gl/forms/j2o5cgCfF3mIgI523"
-       target="_blank" rel="noopener">Submit your paper</a>
-</app-section>
-
 <sponsors></sponsors>
 <partners></partners>
 

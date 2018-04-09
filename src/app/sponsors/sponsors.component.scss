@@ -1,4 +1,5 @@
-@import "../shared/components";
+@import "../shared/paragraph";
+@import "../shared/variables";
 @import "../shared/media-mixins";
 
 :host {
@@ -33,7 +34,7 @@
             white-space: nowrap;
         }
     }
-    a.button {
+    sh-button {
         margin: 20px auto 0;
     }
 }
@@ -69,7 +70,7 @@
                 font-size: $font-md;
             }
         }
-        a.button {
+        sh-button {
             margin: 40px auto 0;
         }
     }

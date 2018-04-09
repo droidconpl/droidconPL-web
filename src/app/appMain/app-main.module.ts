@@ -9,6 +9,7 @@ import 'hammerjs';
 import { ProfileModule } from '../shared/profile/profile.module';
 import { AppRoutingModule } from '../app-routing.module';
 import {SponsorsModule} from "../sponsors/sponsors.module";
+import {SharedModule} from "../shared/shared.module";
 
 @NgModule({
     imports: [
@@ -19,6 +20,7 @@ import {SponsorsModule} from "../sponsors/sponsors.module";
         NgxCarouselModule,
         ProfileModule,
         AppRoutingModule,
+        SharedModule,
     ],
     declarations: [
         AppMainComponent,

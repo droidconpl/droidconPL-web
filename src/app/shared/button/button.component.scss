@@ -1,0 +1,56 @@
+@import "../variables";
+@import "../media-mixins";
+
+:host {
+  display: block;
+  margin: 5px 10px;
+  width: 150px;
+  height: 35px;
+
+  a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 5px;
+    margin: 0 auto;
+    transition: background-color .2s ease-in;
+    background-color: $green;
+    color: $white;
+    font-family: $neris-semi-bold;
+    font-size: $font-sm;
+    cursor: pointer;
+    outline: none;
+
+    &:hover, &:visited, &:active, &:focus {
+      text-decoration: none;
+    }
+    &:hover {
+      background-color: $green-01;
+    }
+  }
+}
+
+:host(.white) a {
+  background-color: $white;
+  color: $green;
+
+  &:hover {
+    background-color: transparent;
+    border: 2px solid $white;
+    color: $white;
+  }
+}
+
+@include media-md {
+  :host {
+    margin: 10px 15px;
+    height: 45px;
+    width: 200px;
+
+    a {
+      font-size: $font-lg;
+    }
+  }
+}

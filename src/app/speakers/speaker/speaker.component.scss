@@ -1,4 +1,4 @@
-@import "../../shared/components";
+@import "../../shared/paragraph";
 @import "../../shared/variables";
 @import "../../shared/media-mixins";
 
@@ -43,9 +43,8 @@
         }
     }
 
-    a.button {
+    sh-button {
         margin: 0 auto;
-        color: $white;
     }
 }
 
@@ -92,9 +91,6 @@
             .title {
                 font-size: 28px;
             }
-        }
-        a.button {
-            margin: 20px auto 0;
         }
     }
 }

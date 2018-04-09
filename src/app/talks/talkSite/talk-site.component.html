@@ -9,7 +9,10 @@
             <span class="title">{{talk.title}}</span>
             <p class="big-paragraph description">{{talk.description}}</p>
 
-            <a *ngIf="talk.slidesurl" href="{{talk.slidesurl}}" class="button" target="_blank">Open slides</a>
+            <sh-button *ngIf="talk.slidesurl"
+                       [url]="talk.slidesurl"
+                       [isExternal]="true"
+            >Open slides</sh-button>
         </div>
     </div>
 
@@ -28,5 +31,7 @@
         </div>
     </div>
 
-    <a class="button" routerLink="/agenda" routerLinkActive="active">Back to the agenda</a>
+    <sh-button routerLink="/agenda"
+               routerLinkActive="active"
+    >Back to the agenda</sh-button>
 </app-section>

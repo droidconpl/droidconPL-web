@@ -6,7 +6,7 @@ import { TalksService } from "./talks.service";
     templateUrl: './talks.component.html',
     styleUrls: [
         './talks.component.scss',
-        '../shared/link.scss',
+        '../shared/link/link.component.scss',
     ],
     providers: [
         TalksService,
