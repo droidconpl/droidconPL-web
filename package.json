@@ -31,7 +31,7 @@
     "ngx-modialog": "3.0.3",
     "popper.js": "1.12.5",
     "rxjs": "5.0.1",
-    "zone.js": "0.8.16"
+    "zone.js": "0.8.26"
   },
   "devDependencies": {
     "@types/jasmine": "2.5.36",

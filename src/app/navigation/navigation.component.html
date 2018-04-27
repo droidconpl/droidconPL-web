@@ -33,34 +33,6 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle"
                        href=""
-                       id="aboutDropdownLink"
-                       data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">
-                        About
-                    </a>
-                    <div class="dropdown-menu">
-                        <div class="container-fluid">
-                            <ul class="submenu" aria-labelledby="aboutDropdownLink">
-                                <li class="dropdown-item">
-                                    <a class="nav-link"
-                                       routerLink="/code-of-conduct"
-                                       routerLinkActive="active"
-                                       (click)="toggleNav()">Code of Conduct</a>
-                                </li>
-                                <li class="dropdown-item">
-                                    <a class="nav-link"
-                                       routerLink="/faq"
-                                       routerLinkActive="active"
-                                       (click)="toggleNav()">FAQ</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle"
-                       href=""
                        id="programDropdownLink"
                        data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
@@ -92,10 +64,32 @@
                     </div>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link green"
-                       href="https://goo.gl/jDTiXm"
-                       target="_blank">TICKETS</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle"
+                       href=""
+                       id="aboutDropdownLink"
+                       data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        About
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="container-fluid">
+                            <ul class="submenu" aria-labelledby="aboutDropdownLink">
+                                <li class="dropdown-item">
+                                    <a class="nav-link"
+                                       routerLink="/code-of-conduct"
+                                       routerLinkActive="active"
+                                       (click)="toggleNav()">Code of Conduct</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a class="nav-link"
+                                       routerLink="/faq"
+                                       routerLinkActive="active"
+                                       (click)="toggleNav()">FAQ</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </li>
             </ul>
         </div>
