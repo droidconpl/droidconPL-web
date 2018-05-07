@@ -10,6 +10,8 @@ import { ProfileModule } from '../shared/profile/profile.module';
 import { AppRoutingModule } from '../app-routing.module';
 import {SponsorsModule} from "../sponsors/sponsors.module";
 import {SharedModule} from "../shared/shared.module";
+import {BackgroundComponent} from "./welcomeCard/background.component";
+import {WelcomeCardComponent} from "./welcomeCard/welcome-card.component";
 
 @NgModule({
     imports: [
@@ -25,6 +27,8 @@ import {SharedModule} from "../shared/shared.module";
     declarations: [
         AppMainComponent,
         SpeakerPreview,
+        WelcomeCardComponent,
+        BackgroundComponent,
     ],
     exports: [
         AppMainComponent,

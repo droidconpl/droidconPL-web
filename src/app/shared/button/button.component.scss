@@ -6,6 +6,8 @@
   margin: 5px 10px;
   width: 150px;
   height: 35px;
+  outline: none;
+  cursor: pointer;
 
   a {
     height: 100%;
@@ -20,7 +22,7 @@
     color: $white;
     font-family: $neris-semi-bold;
     font-size: $font-sm;
-    cursor: pointer;
+    pointer-events: none;
     outline: none;
 
     &:hover, &:visited, &:active, &:focus {

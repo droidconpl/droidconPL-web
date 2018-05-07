@@ -1,0 +1,176 @@
+@import "../../shared/variables";
+@import "../../shared/media-mixins";
+
+$krakdroid-height: 100px;
+//TODO: styles for horizontal mobile views
+
+:host {
+  width: 100%;
+  height: 100vh;
+
+  .logo-banner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: flex;
+    flex-flow: column;
+    color: white;
+
+    section {
+      margin-bottom: 25px;
+    }
+    .krakdroid-wrapper {
+      display: flex;
+      flex-flow: column;
+      margin-bottom: 25px;
+
+      .krakdroid {
+        height: $krakdroid-height;
+        margin: 0 auto;
+      }
+      .conference-info {
+        display: flex;
+        flex-flow: column;
+
+        .name {
+          font-family: $neris-black;
+          color: $green;
+          font-size: 47px;
+          line-height: 43px;
+          margin: 0 auto;
+        }
+        .date {
+          font-family: $roboto-condensed;
+          font-weight: 300;
+          font-size: 20px;
+          margin: 0 auto;
+        }
+      }
+    }
+    .address {
+      font-family: $neris-semi-bold;
+      font-size: 14px;
+    }
+  }
+  .shadow-span {
+    text-shadow: 0 0 5px #000000;
+  }
+}
+
+
+@include media-sm {
+  :host .logo-banner {
+      .krakdroid-wrapper {
+        .krakdroid {
+          height: 1.5*$krakdroid-height;
+        }
+        .conference-info {
+          .name {
+            font-size: 60px;
+            line-height: 56px;
+          }
+          .date {
+            font-size: 24px;
+          }
+        }
+      }
+      .address {
+        font-size: 18px;
+      }
+      .main-buttons {
+        justify-content: center;
+      }
+    }
+}
+
+@include media-md {
+  :host .logo-banner  {
+      min-width: 500px;
+      max-width: 500px;
+      align-items: center;
+
+        .krakdroid-wrapper {
+          flex-flow: row;
+          justify-content: center;
+
+          .krakdroid {
+            height: 2*$krakdroid-height;
+            margin: unset;
+          }
+        }
+        .conference-info {
+          margin-top: 5%;
+          .name {
+            font-size: 78px;
+            line-height: 74px;
+            margin: 0;
+          }
+          .date {
+            font-size: 32px;
+            margin: 0;
+          }
+      }
+      .address {
+        font-size: 20px;
+        padding-left: 160px;
+      }
+    }
+}
+
+@include media-lg {
+  :host .logo-banner {
+      max-width: 600px;
+      min-width: 600px;
+
+      .krakdroid-wrapper {
+        width: 200px;
+
+        .krakdroid {
+          height: 2.5*$krakdroid-height;
+        }
+        .conference-info {
+          .name {
+            font-size: 92px;
+            line-height: 88px;
+          }
+          .date {
+            font-size: 38px;
+          }
+        }
+      }
+      .address {
+        font-size: 22px;
+        padding-left: 200px;
+      }
+    }
+}
+
+@include media-xl {
+  :host .logo-banner {
+    max-width: 800px;
+    min-width: 800px;
+
+    .krakdroid-wrapper {
+      width: 280px;
+
+      .krakdroid {
+        height: 3.5*$krakdroid-height;
+        margin-right: 40px;
+      }
+      .conference-info {
+        .name {
+          font-size: 127px;
+          line-height: 120px;
+        }
+        .date {
+          font-size: 52px;
+        }
+      }
+    }
+    .address {
+      font-size: 26px;
+      padding-left: 280px;
+    }
+  }
+}
