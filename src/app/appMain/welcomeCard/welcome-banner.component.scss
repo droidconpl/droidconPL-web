@@ -2,17 +2,16 @@
 @import "../../shared/media-mixins";
 
 $krakdroid-height: 100px;
-//TODO: styles for horizontal mobile views
 
 :host {
   width: 100%;
   height: 100vh;
 
-  .logo-banner {
+  .logo {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-45%);
     display: flex;
     flex-flow: column;
     color: white;
@@ -32,6 +31,8 @@ $krakdroid-height: 100px;
       .conference-info {
         display: flex;
         flex-flow: column;
+        align-items: center;
+        margin-top: 5px;
 
         .name {
           font-family: $neris-black;
@@ -44,13 +45,18 @@ $krakdroid-height: 100px;
           font-family: $roboto-condensed;
           font-weight: 300;
           font-size: 20px;
-          margin: 0 auto;
         }
       }
     }
     .address {
       font-family: $neris-semi-bold;
       font-size: 14px;
+      text-align: center;
+    }
+    .main-buttons {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
     }
   }
   .shadow-span {
@@ -60,7 +66,7 @@ $krakdroid-height: 100px;
 
 
 @include media-sm {
-  :host .logo-banner {
+  :host .logo {
       .krakdroid-wrapper {
         .krakdroid {
           height: 1.5*$krakdroid-height;
@@ -85,7 +91,7 @@ $krakdroid-height: 100px;
 }
 
 @include media-md {
-  :host .logo-banner  {
+  :host .logo  {
       min-width: 500px;
       max-width: 500px;
       align-items: center;
@@ -119,7 +125,7 @@ $krakdroid-height: 100px;
 }
 
 @include media-lg {
-  :host .logo-banner {
+  :host .logo {
       max-width: 600px;
       min-width: 600px;
 
@@ -147,7 +153,7 @@ $krakdroid-height: 100px;
 }
 
 @include media-xl {
-  :host .logo-banner {
+  :host .logo {
     max-width: 800px;
     min-width: 800px;
 
@@ -171,6 +177,25 @@ $krakdroid-height: 100px;
     .address {
       font-size: 26px;
       padding-left: 280px;
+    }
+  }
+}
+
+@media (orientation: landscape) {
+  :host {
+    height: 150vh;
+
+    .logo {
+      -webkit-transform: translateX(-50%) translateY(-15%);
+      -moz-transform: translateX(-50%) translateY(-15%);
+      -ms-transform: translateX(-50%) translateY(-15%);
+      -o-transform: translateX(-50%) translateY(-15%);
+      transform: translateX(-50%) translateY(-15%);
+      text-align: unset;
+
+      .krakdroid-wrapper {
+        flex-flow: row;
+      }
     }
   }
 }
