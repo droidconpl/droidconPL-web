@@ -10,5 +10,4 @@ import {Component} from '@angular/core';
     ]
 })
 export class AppMainComponent {
-    public c4p: boolean = false;
 }

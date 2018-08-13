@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {AngularFireDatabase} from 'angularfire2/database';
 
 interface Sponsor {
     name: string;
@@ -18,10 +17,4 @@ interface Sponsor {
 })
 export class SponsorsComponent {
     public sponsors: any;
-
-    constructor(public af: AngularFireDatabase) {
-        af.list<Sponsor>('sponsors', ref => ref.orderByChild('published').equalTo(true))
-            .valueChanges()
-            .subscribe(sponsors => this.sponsors = sponsors);
-    }
 }
